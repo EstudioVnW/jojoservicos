@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Mensagem = (props) =>
-  <div 
-    className={"conversacao--mensagem " + ((props.emissor === 'bot') ? ' conversacao--mensagem__bot ' : '') + ((props.emissor === 'usuario') ? ' conversacao--mensagem__usuario ' : '')}>
-    {props.children}
-  </div>;
-
+class Mensagem extends Component{
+  constructor(props){
+    super(props);
+    //this.fazerScroll = this.fazerScroll.bind(this); 
+  }
+  render(){
+    return (<div ref="msg"
+      className={"conversacao--mensagem " + ((this.props.emissor === 'bot') ? ' conversacao--mensagem__bot ' : '') + ((this.props.emissor === 'usuario') ? ' conversacao--mensagem__usuario ' : '')}>
+      {this.props.children}
+    </div>);
+  }
+}
+  
 export default Mensagem;

@@ -36,21 +36,21 @@ class Mensagem extends Component {
         </div>
       <div className="caixa_inicial-box">	
         <div className="caixa_inicial-indicacao" onClick={this.open} >
-        <img className="imgdeCompartilhar" src="share.png" />
+        <img className="imgdeCompartilhar" src="share.png" alt="" />
           <p>Indique para um amigo</p>
         </div>
         { compartilhar  === true
         && <div className="caixa_inicial--compartilhar">
             <div className="compartilhar_icone">
-              <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fjojo-servicos.firebaseapp.com%2F&layout=button&size=small&mobile_iframe=true&width=97&height=20&appId" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"><link rel="foto_src" 
-                type="foto.jpeg" ></link>
+              <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fjojo-servicos.firebaseapp.com%2F&layout=button&size=small&mobile_iframe=true&width=97&height=20&appId" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" title="facebook">
+                <link rel="foto_src" type="foto.jpeg" ></link>
               </iframe>      
             </div>
             <div className="compartilhar_icone">
               <a class="twitter-share-button"
               href="https://twitter.com/intent/tweet?text=Venha%20acessar%20a%20Jojo%20Servicos%20ela%20pode%20te ajudar%20a%20superar%20os%20seus%20problemas%20burocráticos%20!%20https://jojo-servicos.firebaseapp.com"
-              data-size="large" target="_blank">
-                <img className="icone-twitter" src="twitter-logo.svg" />      
+              data-size="large" target="_blank" rel="noopener noreferrer">
+                <img className="icone-twitter" src="twitter-logo.svg" alt="twitter" />      
               Tweetar</a>
             </div>
           </div>

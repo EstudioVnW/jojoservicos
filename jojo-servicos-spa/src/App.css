@@ -263,12 +263,14 @@ body{
 }
 .caixa_inicial-boot{
 	width: 40vw;
-	height: 55vh;
+	height: 300px;
     margin: 7% 0;
 	border:solid none;
 	border-radius: 40px;
 	background-color: #F7F7F7;
 	position: relative;
+	display: flex;
+	flex-direction: column
 }
 @media (max-width: 640px){
 	.caixa_inicial-boot{
@@ -307,12 +309,14 @@ body{
 	}
 }
 .caixa_inicial--dialogo{
+	flex-grow: 1;
 	width: 90%;
     height: 200px;
 	margin: 0 0 0 5%;
+	margin-bottom: 24px;
     display: flex;
 	flex-direction: column;
-	max-height: 260px;
+	flex-basis: 260px;
     overflow-y: scroll;
 }
 .caixa_inicial--conversacao{
@@ -527,7 +531,7 @@ body{
 	bottom: -18px;
 	width: 90%;
 	height: 40px;
-	margin:0 5%;
+	margin:0;
   	margin-top: 5%;
 	display: flex;
 	justify-content: center;

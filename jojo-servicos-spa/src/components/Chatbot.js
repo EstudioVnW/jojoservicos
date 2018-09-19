@@ -8,15 +8,15 @@ const Chatbot = () =>
         Fale com a Jojô!
       </p>
     </div>
-    <div class="caixa_inicial--dialogo">
-      <div class="caixa_inicial--conversacao">
-        <div class="caixa_inicial--mensagem_">
-          <p class="caixa_inicial--dialogo1">
+    <div className="caixa_inicial--dialogo">
+      <div className="caixa_inicial--conversacao">
+        <div className="caixa_inicial--mensagem_">
+          <p className="caixa_inicial--dialogo1">
             Oi, sou o Pedro
           </p>
         </div>		
-        <div class="caixa_inicial--mensagem">
-          <p class="caixa_inicial--dialogo2">
+        <div className="caixa_inicial--mensagem">
+          <p className="caixa_inicial--dialogo2">
               Pedro, selecione o tipo de solução que busca encontrar:
           </p>
         </div>

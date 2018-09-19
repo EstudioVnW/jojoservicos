@@ -36,11 +36,11 @@ const Footer = () =>
       <p className="creditos--vencedor">Jojô Serviços - vencedora do StartupIN Favela 2018</p>
       <p className="creditos--desenvolvido">Desenvolvido por 1STi e Estúdio Vai na Web</p>
       <div className="caixa_rodape--logos">
-        <img className="rodape_logos" src="logo-startupin.svg" />
-        <a class="rodape-parceiros-apoio__logos-link" href="http://www.1sti.com.br/" target="_blank">
-          <img className="rodape_logos" src="1sti.svg"/></a>
-        <a class="rodape-creditos__link" href="https://estudiovnw.github.io/estudio/" target="_blank">
-          <img className="rodape_logos" src="logo-studio.png"/></a>
+        <img className="rodape_logos" src="logo-startupin.svg" alt="logo-startupin" />
+        <a className="rodape-parceiros-apoio__logos-link" href="http://www.1sti.com.br/" target="_blank" rel="noopener noreferrer">
+          <img className="rodape_logos" src="1sti.svg" alt="1sti" /></a>
+        <a className="rodape-creditos__link" href="https://estudiovnw.github.io/estudio/" target="_blank"rel="noopener noreferrer">
+          <img className="rodape_logos" src="logo-studio.png" alt="logo-studio" /></a>
 
       </div>
     </div>
