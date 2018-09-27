@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './App.css';
 
-
 import sendUserSays from './services/api.js';
+import databaseApi from './services/database-api';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -16,6 +15,7 @@ class App extends Component {
     super(props);
     this.dialogRef = React.createRef();
     this.state = { 
+      parameters: {},
       compartilhar:false,
       mensagens: [
         {
@@ -30,8 +30,11 @@ class App extends Component {
     this.scrollToBottom = this.scrollToBottom.bind(this);
   }
   enviarMensagemUsr(text){
+    console.log('doc', this.props.doc.pegarIdDoc());
     sendUserSays(text, this.props.sessionId)
     .then(res => {
+      console.log(res.data.result.parameters);
+
       let novasMensagens = res.data.result.fulfillment.messages.map(
         (item, index) => {
           return {
@@ -40,9 +43,12 @@ class App extends Component {
           emissor:"bot" }
       });
       let newState = {
+        parameters: {...this.state.parameters, ...res.data.result.parameters, ...{ atualizacao: new Date().toString()}},
         mensagens: [...this.state.mensagens, ...novasMensagens]
       };
       this.setState( newState );
+      console.log(newState);
+      databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), {...this.state.parameters, ...newState.parameters });
     });
     
     this.setState(
