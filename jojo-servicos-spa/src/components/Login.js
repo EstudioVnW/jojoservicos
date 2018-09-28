@@ -121,7 +121,7 @@ const Container_entrar = styled.div`
 `;
 
 const Container_entrar_items = styled.div`
-  width: 295px;
+  width: 315px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

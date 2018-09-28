@@ -1,29 +1,33 @@
 import React, { Component } from 'react';
 
-export default class Tema extends Component{
-  render(){
-    return(
-      <div>
-        <div>
-          <p>Pendente</p>
-          <p>Análise</p>
-          <p>Finalizado</p>
-          <p>Pendente</p>
-          <p>Análise</p>
-        </div>
-        <div>
-          <p>Pendente</p>
-          <p>Análise</p>
-          <p>Finalizado</p>
-          <p>Pendente</p>
-          <p>Análise</p>
-        </div>
-        <div>
-          <p>Pendente</p>
-          <p>Análise</p>
-          <p>Finalizado</p>
-        </div>
-      </div>
-    );
-  }
-}
+import styled from 'styled-components';
+
+const Container = styled.div`
+  margin: 0;
+  width: 11%;
+`;
+
+const Tema = () =>
+  <Container>
+    <div>
+      <p>Documento</p>
+      <p>Trabalho</p>
+      <p>Negócio</p>
+      <p>1ª via</p>
+      <p>Documento</p>
+    </div>
+    <div>
+      <p>Documento</p>
+      <p>Trabalho</p>
+      <p>Negócio</p>
+      <p>1ª via</p>
+      <p>Documento</p>
+    </div>
+    <div>
+      <p>Documento</p>
+      <p>Trabalho</p>
+      <p>Negócio</p>
+    </div>
+  </Container>
+
+export default Tema;
