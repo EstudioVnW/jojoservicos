@@ -33,7 +33,7 @@ const Admin = () =>
       <h1>Pedidos:</h1>
       <div>
         <div>
-          {/* <p><Status /></p> */}
+          <p>Status</p>
           <p>Tema</p>
           <p>Categoria</p>
           <p>Tipo</p>
