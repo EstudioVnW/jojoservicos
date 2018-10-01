@@ -33,30 +33,56 @@ const Section = styled.section`
   }
 `;
 
+const Titulo = styled.div`
+  width: 16.6%;
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 28px;
+  color: #fff;
+  font-family: Helvetica;
+  font-weight: bold;
+`;
+
 const ContainerPrincipal = styled.div`
-  width: 80%;
+  width: 85%;
   height: 80%;
+  margin-bottom: 50px;
   display: flex;
   align-self: center;
   flex-direction: column;
   background-color: #fff; 
+  border: #fff solid 1px;
+  border-radius: 5px;
 `;
 
 const ContainerPrincipalSessao = styled.div`
   width: 100%;
   height: 30px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   color: #fff;
+  font-size: 15px;
+  font-family: Helvetica;
+  font-weight: bold;
   background-color: #3358A4;
   border: #fff solid 1px;
 `;
 
-const ContainerConteudo = styled.div` 
+const SessaoParagrafo = styled.div`
+  width: 10%;
+  height: 100%;
   display: flex;
+  align-items: center;
+`;
 
-
+const ContainerConteudo = styled.div` 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow-y: scroll;
 `;
 
 
@@ -70,17 +96,17 @@ const Admin = () =>
       </p>
     </section>
     <Section>
-      <h1>Pedidos:</h1>
+      <Titulo>Pedidos:</Titulo>
       <ContainerPrincipal>
         <ContainerPrincipalSessao>
-          <p>Status</p>
-          <p>Tema</p>
-          <p>Categoria</p>
-          <p>Tipo</p>
-          <p>Cliente</p>
-          <p>Entrada</p>
-          <p>Pendências</p>
-          <p>Mensagens</p>
+            <SessaoParagrafo>Status</SessaoParagrafo>
+            <SessaoParagrafo>Tema</SessaoParagrafo>
+            <SessaoParagrafo>Categoria</SessaoParagrafo>
+            <SessaoParagrafo>Tipo</SessaoParagrafo>
+            <SessaoParagrafo>Cliente</SessaoParagrafo>
+            <SessaoParagrafo>Entrada</SessaoParagrafo>
+            <SessaoParagrafo>Pendências</SessaoParagrafo>
+            <SessaoParagrafo>Mensagens</SessaoParagrafo>
         </ContainerPrincipalSessao>
         <ContainerConteudo>
           <Status />
