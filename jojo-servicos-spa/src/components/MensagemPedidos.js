@@ -39,43 +39,43 @@ const MensagemPedidos = () =>
   <Container>
     {/* <Container_images> */}
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
       <Items>
-      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        <MensageIcon src="./mensage.svg" alt="Mensagem" />
       </Items>
     {/* </Container_images> */}
   </Container>

@@ -72,9 +72,17 @@ const ContainerPrincipalSessao = styled.div`
 `;
 
 const SessaoParagrafo = styled.div`
-  width: 10%;
+  width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
+`;
+
+const SessaoParagrafoStatus = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 `;
 
@@ -99,7 +107,7 @@ const Admin = () =>
       <Titulo>Pedidos:</Titulo>
       <ContainerPrincipal>
         <ContainerPrincipalSessao>
-            <SessaoParagrafo>Status</SessaoParagrafo>
+            <SessaoParagrafoStatus>Status</SessaoParagrafoStatus>
             <SessaoParagrafo>Tema</SessaoParagrafo>
             <SessaoParagrafo>Categoria</SessaoParagrafo>
             <SessaoParagrafo>Tipo</SessaoParagrafo>
