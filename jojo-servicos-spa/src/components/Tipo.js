@@ -6,8 +6,13 @@ const Container = styled.div`
   margin: 0;
   width: 200px;
   height: 100%;
-  color: #000;
-  font-family: Helvetica;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media(max-width: 640px){
+    width: 100%;
+    display: flex;
+  }
 `;
 
 // const ContainerItems = styled.div`
@@ -28,8 +33,22 @@ const Items = styled.p`
   align-items:center;
   white-space: nowrap;
   font-size: 15px;
+  font-family: Helvetica;
   border-bottom: 0.5px solid #707070;
+  @media(max-width: 640px){
+    width: 100%;
+    display: flex;
+    font-size: 10px; 
+  }
 `;
+
+// const ItemsBoleto = styled.div`
+//   display: none;
+//   @media(max-width: 640px){
+//     width: 100%;
+//     display: flex;
+//   }
+// `;
 
 const Tipo = () =>
   <Container>
@@ -42,11 +61,13 @@ const Tipo = () =>
       <Items>Identidade</Items>
       <Items>Identidade</Items>
       <Items>Impressão boleto</Items>
+      {/* <ItemsBoleto>Imprs. blto</ItemsBoleto> */}
       <Items>Identidade</Items>
       <Items>Identidade</Items>
       <Items>Identidade</Items>
       <Items>Identidade</Items>
       <Items>Impressão boleto</Items>
+      {/* <ItemsBoleto>Imprs. blto</ItemsBoleto> */}
     {/* </ContainerItems> */}
   </Container>
 

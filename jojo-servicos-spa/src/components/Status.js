@@ -6,8 +6,12 @@ const Container = styled.div`
   margin: 0;
   width: 200px;
   height: 100%;
-  color: #000;
-  font-family: Helvetica;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
 `;
 
 // const ContainerItems = styled.div`

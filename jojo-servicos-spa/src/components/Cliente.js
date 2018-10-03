@@ -6,18 +6,14 @@ const Container = styled.div`
   margin: 0;
   width: 200px;
   height: 100%;
-  color: #000;
-  font-family: Helvetica;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media(max-width: 640px){
+    width: 100%;
+    display: flex;
+  }
 `;
-  
-// const ContainerItems = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   flex-direction: column;
-// `;
 
 const Items = styled.p`
   width: 100%;
@@ -28,26 +24,64 @@ const Items = styled.p`
   align-items:center;
   white-space: nowrap;
   font-size: 15px;
+  font-family: Helvetica;
   border-bottom: 0.5px solid #707070;
+  @media(max-width: 640px){
+    width: 100%;
+    display: none;
+    font-size: 10px;
+
+  }
+`;
+
+const ItemsMobile = styled.p`
+  display: none;
+  @media(max-width: 640px){
+    width: 100%;
+    height: 7.7%;
+    padding-left: 13.5px;
+    display: flex;
+    text-align: right;
+    align-items:center;
+    white-space: nowrap;
+    font-size: 10px;
+    font-family: Helvetica;
+    border-bottom: 0.5px solid #707070;
+  }
 `;
 
 const Cliente = () =>
   <Container>
-    {/* <ContainerItems> */}
-      <Items>Pedro Silva</Items>
-      <Items>Jaqueline Rodrigues</Items>
-      <Items>Igor Melo</Items>
-      <Items>Maria Eugênia</Items>
-      <Items>Gabriel Freitas</Items>
-      <Items>Pedro Silva</Items>
-      <Items>Jaqueline Rodrigues</Items>
-      <Items>Igor Melo</Items>
-      <Items>Maria Eugênia</Items>
-      <Items>Gabriel Freitas</Items>
-      <Items>Pedro Silva</Items>
-      <Items>Jaqueline Rodrigues</Items>
-      <Items>Igor Melo</Items>
-    {/* </ContainerItems> */}
+    <Items>Pedro Silva</Items>
+    <Items>Jaqueline Rodrigues</Items>
+    <Items>Igor Melo</Items>
+    <Items>Maria Eugênia</Items>
+    <Items>Gabriel Freitas</Items>
+    <Items>Pedro Silva</Items>
+    <Items>Jaqueline Rodrigues</Items>
+    <Items>Igor Melo</Items>
+    <Items>Maria Eugênia</Items>
+    <Items>Gabriel Freitas</Items>
+    <Items>Pedro Silva</Items>
+    <Items>Jaqueline Rodrigues</Items>
+    <Items>Igor Melo</Items>
+      
+    {/* mobile  */}
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+    <ItemsMobile>Pedro Silva</ItemsMobile>
+
+
   </Container>
 
 export default Cliente;

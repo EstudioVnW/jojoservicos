@@ -14,6 +14,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   width: 100%;
+  @media(max-width: 640px){
+    width: 100%;
+    height: 100vh;
+  }
 `;
 
 const Section = styled.section`
@@ -43,6 +47,14 @@ const Titulo = styled.div`
   color: #fff;
   font-family: Helvetica;
   font-weight: bold;
+  @media(max-width: 640px){
+    width: 100%;
+    height: 10%;
+    padding: 0 28px;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 20px;
+  }
 `;
 
 const ContainerPrincipal = styled.div`
@@ -55,44 +67,198 @@ const ContainerPrincipal = styled.div`
   background-color: #fff; 
   border: #fff solid 1px;
   border-radius: 5px;
+  @media(max-width: 640px){
+    width: 85%;
+    height: 100%;
+    display: flex;
+  }
 `;
 
-const ContainerPrincipalSessao = styled.div`
+const ContainerPrincipalCabecalho = styled.div`
   width: 100%;
   height: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  /* align-items: center; */
   color: #fff;
   font-size: 15px;
   font-family: Helvetica;
   font-weight: bold;
   background-color: #3358A4;
   border: #fff solid 1px;
+  @media(max-width: 640px){
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 10px;
+  }
 `;
 
-const SessaoParagrafo = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
-const SessaoParagrafoStatus = styled.div`
+const ContainerPrincipalCabecalhoItems = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-around;
+`;
+
+// const CabecalhoParagrafo = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   align-self: center;
+//   align-items: center;
+// `;
+
+const CabecalhoParagrafoStatus = styled.div`
+  /* width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const CabecalhoParagrafoTema = styled.div` 
+  /* width: 85%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const CabecalhoParagrafoCategoria = styled.div` 
+  /* width: 90%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    width: 100%;
+    display: flex;  
+    
+  }
+`;
+
+const CabecalhoParagrafoTipo = styled.div` 
+  /* width: 85%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+`;
+
+const CabecalhoParagrafoCliente = styled.div` 
+  /* width: 85%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+  }
+`;
+
+const CabecalhoParagrafoEntrada = styled.div` 
+  /* width: 100%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const CabecalhoParagrafoPendencias = styled.div` 
+  /* width: 100%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const CabecalhoParagrafoMensagem = styled.div`
+  /* width: 75%;
+  height: 100%;
+  display: flex;
+  align-self: center;
+  align-items: center; */
+  /* width: 10%; */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const ContainerConteudo = styled.div` 
   width: 100%;
   height: 100%;
   display: flex;
+  color: #000;
+  font-family: Helvetica;
   overflow-y: scroll;
+  @media(max-width: 640px){
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
 `;
-
 
 
 const Admin = () =>
@@ -106,16 +272,18 @@ const Admin = () =>
     <Section>
       <Titulo>Pedidos:</Titulo>
       <ContainerPrincipal>
-        <ContainerPrincipalSessao>
-            <SessaoParagrafoStatus>Status</SessaoParagrafoStatus>
-            <SessaoParagrafo>Tema</SessaoParagrafo>
-            <SessaoParagrafo>Categoria</SessaoParagrafo>
-            <SessaoParagrafo>Tipo</SessaoParagrafo>
-            <SessaoParagrafo>Cliente</SessaoParagrafo>
-            <SessaoParagrafo>Entrada</SessaoParagrafo>
-            <SessaoParagrafo>Pendências</SessaoParagrafo>
-            <SessaoParagrafo>Mensagens</SessaoParagrafo>
-        </ContainerPrincipalSessao>
+        <ContainerPrincipalCabecalho>
+          <ContainerPrincipalCabecalhoItems>
+            <CabecalhoParagrafoStatus>Status</CabecalhoParagrafoStatus>
+            <CabecalhoParagrafoTema>Tema</CabecalhoParagrafoTema>
+            <CabecalhoParagrafoCategoria>Categoria</CabecalhoParagrafoCategoria>
+            <CabecalhoParagrafoTipo>Tipo</CabecalhoParagrafoTipo>
+            <CabecalhoParagrafoCliente>Cliente</CabecalhoParagrafoCliente>
+            <CabecalhoParagrafoEntrada>Entrada</CabecalhoParagrafoEntrada>
+            <CabecalhoParagrafoPendencias>Pendências</CabecalhoParagrafoPendencias>
+            <CabecalhoParagrafoMensagem>Mensagens</CabecalhoParagrafoMensagem>
+          </ContainerPrincipalCabecalhoItems>
+        </ContainerPrincipalCabecalho>
         <ContainerConteudo>
           <Status />
           <Tema />

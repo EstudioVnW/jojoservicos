@@ -5,9 +5,14 @@ import styled from 'styled-components';
 const Container = styled.div`
   margin: 0;
   width: 200px;
-  height: 100%;
-  color: #000;
-  font-family: Helvetica;
+  height: 100%;    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media(max-width: 640px){
+    width: 100%;
+    display: flex;
+  }
 `;
 
 // const Container_images = styled.div` 
@@ -27,7 +32,13 @@ const Items = styled.p`
   justify-content: space-evenly;
   align-items: center;
   font-size: 15px;
+  font-family: Helvetica;
   border-bottom: 0.5px solid #707070;
+  @media(max-width: 640px){
+    width: 100%;
+    display: flex;
+    font-size: 10px;
+  }
 `;
 
 const MensageIcon = styled.img`

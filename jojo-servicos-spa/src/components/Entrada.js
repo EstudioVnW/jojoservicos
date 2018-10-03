@@ -6,8 +6,12 @@ const Container = styled.div`
   margin: 0;
   width: 200px;
   height: 100%;
-  color: #000;
-  font-family: Helvetica;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
 `;
 
 // const ContainerItems = styled.div`
@@ -28,6 +32,7 @@ const Items = styled.p`
   text-align: right;
   align-items:center;
   font-size: 15px;
+  font-family: Helvetica;
   border-bottom: 0.5px solid #707070;
 `;
 
