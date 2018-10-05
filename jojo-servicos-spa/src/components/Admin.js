@@ -76,7 +76,7 @@ const ContainerPrincipal = styled.div`
 
 const ContainerPrincipalCabecalho = styled.div`
   width: 100%;
-  height: 30px;
+  height: 40px;
   /* display: flex; */
   /* justify-content: space-between; */
   /* align-items: center; */
@@ -86,9 +86,9 @@ const ContainerPrincipalCabecalho = styled.div`
   font-weight: bold;
   background-color: #3358A4;
   border: #fff solid 1px;
+  border-radius: 5px 5px 0 0;
   @media(max-width: 640px){
     width: 100%;
-    height: 30px;
     display: flex;
     justify-content: space-evenly;
     font-size: 10px;
