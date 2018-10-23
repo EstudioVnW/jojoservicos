@@ -28,7 +28,7 @@ const Section = styled.section`
   }
 `;
 
-const Titulo_topo = styled.h1`
+const TituloTopo = styled.h1`
   width: 500px;
   text-align: center;
   color: #fff;
@@ -41,7 +41,7 @@ const Titulo_topo = styled.h1`
   }
 `;
 
-const Container_login = styled.div`
+const ContainerLogin = styled.div`
   width: 400px;
   height: 370px;
   display: flex;
@@ -57,7 +57,7 @@ const Container_login = styled.div`
   }
 `;
 
-const Container_login_items = styled.div`
+const ContainerLoginItems = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -66,7 +66,7 @@ const Container_login_items = styled.div`
   flex-direction: column;
 `;
 
-const Logo_jojo = styled.img`
+const LogoJojo = styled.img`
   width: 170px;
   height: 108px;
   @media(max-width: 640px){
@@ -75,7 +75,7 @@ const Logo_jojo = styled.img`
   }
 `;
 
-const Container_input = styled.div`
+const ContainerInput = styled.div`
   width: 315px;
   height: 135px;
   display: flex;
@@ -106,7 +106,7 @@ const LoginFormInput = styled.input`
   }
 `;
 
-const Container_entrar = styled.div`
+const ContainerEntrar = styled.div`
   width: 345px;
   height: 50px;
   display: flex;
@@ -120,7 +120,7 @@ const Container_entrar = styled.div`
   }
 `;
 
-const Container_entrar_items = styled.div`
+const ContainerEntrarItems = styled.div`
   width: 315px;
   display: flex;
   justify-content: space-evenly;
@@ -132,7 +132,7 @@ const Container_entrar_items = styled.div`
   }
 `;
 
-const Button_entrar = styled.button`
+const ButtonEntrar = styled.button`
   width: 135px;
   height: 35px;
   color: #fff;
@@ -153,22 +153,22 @@ const Login= () =>
   <Container>
     <Header />
     <Section>
-      <Titulo_topo>Central de visualização de pedidos da Jojô</Titulo_topo>
-      <Container_login>
-        <Container_login_items>
-          <Logo_jojo src="./logo-jojo.svg" alt="logo jojo" />
-          <Container_input>
+      <TituloTopo>Central de visualização de pedidos da Jojô</TituloTopo>
+      <ContainerLogin>
+        <ContainerLoginItems>
+          <LogoJojo src="./logo-jojo.svg" alt="logo jojo" />
+          <ContainerInput>
             <LoginFormInput type="email" name="email" placeholder="Log in" />
             <LoginFormInput type="password" name="password" placeholder="Senha" />
-          </Container_input>
-          <Container_entrar>
-            <Container_entrar_items>
+          </ContainerInput>
+          <ContainerEntrar>
+            <ContainerEntrarItems>
               <a href=" ">Esqueceu a senha?</a>
-              <Button_entrar>Entrar</Button_entrar>
-            </Container_entrar_items>
-          </Container_entrar>
-        </Container_login_items>
-      </Container_login>
+              <ButtonEntrar>Entrar</ButtonEntrar>
+            </ContainerEntrarItems>
+          </ContainerEntrar>
+        </ContainerLoginItems>
+      </ContainerLogin>
     </Section>
     <Footer />
   </Container>

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 
@@ -37,20 +37,9 @@ const Items = styled.p`
 
 const Status = () =>
   <Container>
-    {/* <ContainerItems> */}
+    {/* <ContainerItems>
+    Pendente, Analise e Finalizado */}
       <Items>Pendente</Items>
-      <Items>Análise</Items>
-      <Items>Finalizado</Items>
-      <Items>Pendente</Items>
-      <Items>Análise</Items>
-      <Items>Pendente</Items>
-      <Items>Análise</Items>
-      <Items>Finalizado</Items>
-      <Items>Pendente</Items>
-      <Items>Análise</Items>
-      <Items>Pendente</Items>
-      <Items>Análise</Items>
-      <Items>Finalizado</Items>
     {/* </ContainerItems> */}
   </Container>
 

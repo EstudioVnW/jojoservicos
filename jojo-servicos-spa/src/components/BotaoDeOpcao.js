@@ -7,11 +7,11 @@ const BotaoDeOpcao = (props) =>
         {props.title}
       </button>
       <p className="caixa_inicial--info">
-        {props.descricao}
+        {"props.descricao"}
       </p>
     </div>
     <div className="img-container">
-      <img src={props.img} />
+      <img src={"/"} />
     </div>
   </div>;
 

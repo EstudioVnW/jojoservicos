@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import styled from 'styled-components';
 
@@ -37,20 +37,9 @@ const Items = styled.p`
 
 const Tema = () =>
   <Container>
-    {/* <ContainerItems> */}
+    {/* <ContainerItems> 
+    Documento, Trabalho, Negócio, 1ª via*/}
       <Items>Documento</Items>
-      <Items>Trabalho</Items>
-      <Items>Negócio</Items>
-      <Items>1ª via</Items>
-      <Items>Documento</Items>
-      <Items>Documento</Items>
-      <Items>Trabalho</Items>
-      <Items>Negócio</Items>
-      <Items>1ª via</Items>
-      <Items>Documento</Items>
-      <Items>Documento</Items>
-      <Items>Trabalho</Items>
-      <Items>Negócio</Items>
     {/* </ContainerItems> */}
   </Container>
 

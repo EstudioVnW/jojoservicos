@@ -1,14 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import Footer from './Footer';
-import Status from './Status';
-import Tema from './Tema';
-import Categoria from './Categoria';
-import Tipo from './Tipo';
-import Cliente from './Cliente';
-import Entrada from './Entrada';
-import Pendencias from './Pendencias';
-import MensagemPedidos from './MensagemPedidos';
+import CelTable from './CelTable';
 
 import styled from 'styled-components';
 
@@ -96,6 +89,7 @@ const ContainerPrincipalCabecalho = styled.div`
 `;
 
 const ContainerPrincipalCabecalhoItems = styled.div`
+  padding-right:14px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -110,146 +104,23 @@ const ContainerPrincipalCabecalhoItems = styled.div`
 //   align-items: center;
 // `;
 
-const CabecalhoParagrafoStatus = styled.div`
-  /* width: 80%;
+const HeaderTable = styled.div`
   height: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
+  padding: 0 6px;
+  justify-content: left;
   align-items: center;
+  flex-basis:180px;
+  flex-grow: 1;
   @media(max-width: 640px){
     display: none;
-  }
-`;
-
-const CabecalhoParagrafoTema = styled.div` 
-  /* width: 85%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    display: none;
-  }
-`;
-
-const CabecalhoParagrafoCategoria = styled.div` 
-  /* width: 90%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    width: 100%;
-    display: flex;  
-    
-  }
-`;
-
-const CabecalhoParagrafoTipo = styled.div` 
-  /* width: 85%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-  }
-`;
-
-const CabecalhoParagrafoCliente = styled.div` 
-  /* width: 85%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    width: 80%;
-    display: flex;
-    justify-content: flex-start;
-  }
-`;
-
-const CabecalhoParagrafoEntrada = styled.div` 
-  /* width: 100%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    display: none;
-  }
-`;
-
-const CabecalhoParagrafoPendencias = styled.div` 
-  /* width: 100%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    display: none;
-  }
-`;
-
-const CabecalhoParagrafoMensagem = styled.div`
-  /* width: 75%;
-  height: 100%;
-  display: flex;
-  align-self: center;
-  align-items: center; */
-  /* width: 10%; */
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    width: 80%;
-    display: flex;
-    justify-content: center;
   }
 `;
 
 const ContainerConteudo = styled.div` 
   width: 100%;
-  height: 100%;
   display: flex;
+  flex-direction: column;
   color: #000;
   font-family: Helvetica;
   overflow-y: scroll;
@@ -259,44 +130,76 @@ const ContainerConteudo = styled.div`
     display: flex;
   }
 `;
+const Row = styled.div` 
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`;
 
-
-const Admin = () =>
-  <Container>
-    <section className="caixa_topo">
-      <img className="caixa_topo--logo" src="./logo-jojo.svg" alt="logo jojo" />
-      <p className="caixa_topo--texto">
-      Central de visualização de pedidos
-      </p>
-    </section>
-    <Section>
-      <Titulo>Pedidos:</Titulo>
-      <ContainerPrincipal>
-        <ContainerPrincipalCabecalho>
-          <ContainerPrincipalCabecalhoItems>
-            <CabecalhoParagrafoStatus>Status</CabecalhoParagrafoStatus>
-            <CabecalhoParagrafoTema>Tema</CabecalhoParagrafoTema>
-            <CabecalhoParagrafoCategoria>Categoria</CabecalhoParagrafoCategoria>
-            <CabecalhoParagrafoTipo>Tipo</CabecalhoParagrafoTipo>
-            <CabecalhoParagrafoCliente>Cliente</CabecalhoParagrafoCliente>
-            <CabecalhoParagrafoEntrada>Entrada</CabecalhoParagrafoEntrada>
-            <CabecalhoParagrafoPendencias>Pendências</CabecalhoParagrafoPendencias>
-            <CabecalhoParagrafoMensagem>Mensagens</CabecalhoParagrafoMensagem>
-          </ContainerPrincipalCabecalhoItems>
-        </ContainerPrincipalCabecalho>
-        <ContainerConteudo>
-          <Status />
-          <Tema />
-          <Categoria />
-          <Tipo />
-          <Cliente />
-          <Entrada />
-          <Pendencias />
-          <MensagemPedidos />
-        </ContainerConteudo>
-      </ContainerPrincipal>
-    </Section>
-    <Footer />
-  </Container>
+class Admin extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      pedidos: [
+        {  nome: 'Nome', 
+           whatsapp: '(99)9999-9990', 
+          'nome-completo': 'Nome Completo', 
+          'nome-do-pai': 'Nome do Pai',
+          'nome-da-mae': 'Nome da Mãe',
+          'servico': 'Nome do serviço'
+         },
+         {  nome: 'Nome', 
+          'nome-completo': 'Nome Completo', 
+          'nome-do-pai': 'Nome do Pai',
+          'nome-da-mae': 'Nome da Mãe',
+          'servico': 'Nome do serviço'
+         }
+      ]
+    };
+  }
+  render(){
+    return (
+      <Container>
+        <section className="caixa_topo">
+          <img className="caixa_topo--logo" src="./logo-jojo.svg" alt="logo jojo" />
+          <p className="caixa_topo--texto">
+          Central de visualização de pedidos
+          </p>
+        </section>
+        <Section>
+          <Titulo>Pedidos:</Titulo>
+          <ContainerPrincipal>
+            <ContainerPrincipalCabecalho>
+              <ContainerPrincipalCabecalhoItems>
+                <HeaderTable>Nome</HeaderTable>
+                <HeaderTable>Whatsapp</HeaderTable>
+                <HeaderTable>Nome completo</HeaderTable>
+                <HeaderTable>Nome do pai</HeaderTable>
+                <HeaderTable>Nome da mãe</HeaderTable>
+                <HeaderTable>Serviço</HeaderTable>
+              </ContainerPrincipalCabecalhoItems>
+            </ContainerPrincipalCabecalho>
+            <ContainerConteudo>
+              {
+                this.state.pedidos.map(item => {
+                  return (
+                    <Row>
+                      <CelTable value={item['nome']} />
+                      <CelTable value={item['whatsapp']} />
+                      <CelTable value={item['nome-completo']} />
+                      <CelTable value={item['nome-do-pai']} />
+                      <CelTable value={item['nome-da-mae']} />
+                      <CelTable value={item['servico']} />
+                    </Row>
+                    )
+                })
+              }
+              </ContainerConteudo>
+          </ContainerPrincipal>
+        </Section>
+        <Footer />
+      </Container>);
+    }
+  }
 
 export default Admin;

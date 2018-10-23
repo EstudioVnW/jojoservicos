@@ -3,6 +3,8 @@ import './App.css';
 
 import sendUserSays from './services/api.js';
 import databaseApi from './services/database-api';
+import opcoes from './services/opcoes';
+import sendEvent from './services/api';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -13,6 +15,7 @@ import Conversacao from './components/Conversacao';
 class App extends Component {
   constructor(props){
     super(props);
+    console.log('opcoes', opcoes['exibir-opcoes-secao']);
     this.dialogRef = React.createRef();
     this.state = { 
       parameters: {},
@@ -26,28 +29,72 @@ class App extends Component {
       ]
       
     };
+    this.sendEventUsr = this.sendEventUsr.bind(this);
     this.enviarMensagemUsr = this.enviarMensagemUsr.bind(this);
     this.scrollToBottom = this.scrollToBottom.bind(this);
   }
-  enviarMensagemUsr(text){
-    console.log('doc', this.props.doc.pegarIdDoc());
-    sendUserSays(text, this.props.sessionId)
+  sendEventUsr(text){
+    console.log('event123');
+    sendEvent.sendEvent(text, this.props.sessionId)
     .then(res => {
-      console.log(res.data.result.parameters);
+      console.log('res', res);
+      let novasMensagens;
+      let { fulfillment, parameters, action } = res.data.result;
+      
+      novasMensagens = fulfillment.messages.map(
+        (item, index) => {
+          return {
+            text: item.speech, 
+            textId: new Date().getTime() + '+' + index, 
+            emissor:"bot" }
+      });
+      if(opcoes[action]){
+        novasMensagens.push(
+          {
+            opcoes: opcoes[action], 
+            textId: new Date().getTime(), 
+            emissor:"bot"
+          });
+      }
+      let newState = {
+        parameters: {...this.state.parameters, ...parameters, ...{ atualizacao: new Date().toString()}},
+        mensagens: [...this.state.mensagens, ...novasMensagens]
+      };
+      this.setState( newState );
+      //console.log(newState);
+      //databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), {...this.state.parameters, ...newState.parameters });
+    });
+  }
 
-      let novasMensagens = res.data.result.fulfillment.messages.map(
+  enviarMensagemUsr(text){
+    //console.log('doc', this.props.doc.pegarIdDoc());
+    sendUserSays.sendUserSays(text, this.props.sessionId)
+    .then(res => {
+      let novasMensagens;
+      let { fulfillment, parameters, action } = res.data.result;
+      
+      novasMensagens = fulfillment.messages.map(
         (item, index) => {
           return {
           text: item.speech, 
           textId: new Date().getTime() + '+' + index, 
           emissor:"bot" }
       });
+      if(opcoes[action]){
+        console.log('action', action);
+        novasMensagens.push(
+          {
+            opcoes: opcoes[action], 
+            textId: new Date().getTime(), 
+            emissor:"bot"
+          });
+      }
       let newState = {
-        parameters: {...this.state.parameters, ...res.data.result.parameters, ...{ atualizacao: new Date().toString()}},
+        parameters: {...this.state.parameters, ...parameters, ...{ atualizacao: new Date().toString()}},
         mensagens: [...this.state.mensagens, ...novasMensagens]
       };
       this.setState( newState );
-      console.log(newState);
+      //console.log(newState);
       databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), {...this.state.parameters, ...newState.parameters });
     });
     
@@ -81,7 +128,7 @@ class App extends Component {
               <img className="caixa_inicial-boot--img" src="./JOJO-ilst.png" alt="perfil" />
             </div>
             <div ref={this.dialogRef} className="caixa_inicial--dialogo">
-              <Conversacao mensagensBot={this.state.mensagens} />
+              <Conversacao mensagensBot={this.state.mensagens} sendEvent={this.sendEventUsr} />
             </div>
             <SenderBox funcaoEnviar={this.enviarMensagemUsr} />
           </div>
