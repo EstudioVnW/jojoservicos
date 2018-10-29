@@ -30,11 +30,61 @@ const Section = styled.section`
   }
 `;
 
-const Titulo = styled.div`
-  width: 16.6%;
-  height: 10%;
+const Solicitacoes = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+
+`;
+
+const ContainerSolicitacoesItens = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+`;
+
+const SolicitacoesItens = styled.div`
+  width: 100%;
+  height: 100%;
+  margin: 0 80px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F7F7F7;
+  border: #3358A4 1px;
+  border-radius: 55px;
+
+`;
+
+const ImageSolicitacoes = styled.img`
+  width: 55%;
+  height: 70%;
+`;
+
+const ContainerPrincipal = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+`;
+
+const CabecalhoFinalizados = styled.div`
+  width: 90%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+
+`;
+
+const Titulo = styled.div`
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   font-size: 28px;
   color: #fff;
@@ -50,10 +100,10 @@ const Titulo = styled.div`
   }
 `;
 
-const ContainerPrincipal = styled.div`
+const ContainerTabela = styled.div`
   width: 85%;
-  height: 80%;
-  margin-bottom: 50px;
+  height: 100%;
+  /* margin-bottom: 50px; */
   display: flex;
   align-self: center;
   flex-direction: column;
@@ -67,7 +117,7 @@ const ContainerPrincipal = styled.div`
   }
 `;
 
-const ContainerPrincipalCabecalho = styled.div`
+const ContainerTabelaCabecalho = styled.div`
   width: 100%;
   height: 40px;
   /* display: flex; */
@@ -88,12 +138,16 @@ const ContainerPrincipalCabecalho = styled.div`
   }
 `;
 
-const ContainerPrincipalCabecalhoItems = styled.div`
-  padding-right:14px;
+const ContainerTabelaCabecalhoItems = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
+`;
+
+const HeaderTable = styled.div`
+
 `;
 
 // const CabecalhoParagrafo = styled.div`
@@ -104,22 +158,114 @@ const ContainerPrincipalCabecalhoItems = styled.div`
 //   align-items: center;
 // `;
 
-const HeaderTable = styled.div`
-  height: 100%;
-  display: flex;
-  padding: 0 6px;
-  justify-content: left;
-  align-items: center;
-  flex-basis:180px;
-  flex-grow: 1;
-  @media(max-width: 640px){
-    display: none;
-  }
-`;
+// const CabecalhoParagrafoStatus = styled.div`
+//   /* width: 80%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center; */
+//   /* width: 10%; */
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     display: none;
+//   }
+// `;
+
+// const CabecalhoParagrafoTema = styled.div` 
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     display: none;
+//   }
+// `;
+
+// const CabecalhoParagrafoCategoria = styled.div` 
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     width: 100%;
+//     display: flex;  
+    
+//   }
+// `;
+
+// const CabecalhoParagrafoTipo = styled.div` 
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     width: 100%;
+//     display: flex;
+//     justify-content: flex-start;
+//   }
+// `;
+
+// const CabecalhoParagrafoCliente = styled.div` 
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     width: 80%;
+//     display: flex;
+//     justify-content: flex-start;
+//   }
+// `;
+
+// const CabecalhoParagrafoEntrada = styled.div` 
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     display: none;
+//   }
+// `;
+
+// const CabecalhoParagrafoSaida = styled.div`
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     display: none;
+//   }
+// `;
+
+// const CabecalhoParagrafoPendencias = styled.div` 
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     display: none;
+//   }
+// `;
+
+// const CabecalhoParagrafoMensagem = styled.div`
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   @media(max-width: 640px){
+//     width: 80%;
+//     display: flex;
+//     justify-content: center;
+//   }
+// `;
 
 const ContainerConteudo = styled.div` 
   width: 100%;
+  height: 100%;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   color: #000;
   font-family: Helvetica;
@@ -130,6 +276,7 @@ const ContainerConteudo = styled.div`
     display: flex;
   }
 `;
+
 const Row = styled.div` 
   width: 100%;
   display: flex;
@@ -141,19 +288,41 @@ class Admin extends Component {
     super(props);
     this.state = {
       pedidos: [
-        {  nome: 'Nome', 
-           whatsapp: '(99)9999-9990', 
-          'nome-completo': 'Nome Completo', 
-          'nome-do-pai': 'Nome do Pai',
-          'nome-da-mae': 'Nome da Mãe',
-          'servico': 'Nome do serviço'
-         },
-         {  nome: 'Nome', 
-          'nome-completo': 'Nome Completo', 
-          'nome-do-pai': 'Nome do Pai',
-          'nome-da-mae': 'Nome da Mãe',
-          'servico': 'Nome do serviço'
-         }
+        {  'tema': 'documento', 
+           'categoria': '2ª via', 
+            'tipo': 'Identidade', 
+            'cliente': 'Pedro',
+            'entrada': '11/09/2018',
+            'saida': '11/09/2018'
+        },
+        {  'tema': 'documento', 
+           'categoria': '2ª via', 
+            'tipo': 'Identidade', 
+            'cliente': 'Pedro',
+            'entrada': '11/09/2018',
+            'saida': '11/09/2018'
+        },
+        {  'tema': 'documento', 
+           'categoria': '2ª via', 
+            'tipo': 'Identidade', 
+            'cliente': 'Pedro',
+            'entrada': '11/09/2018',
+            'saida': '11/09/2018'
+        },
+        {  'tema': 'documento', 
+           'categoria': '2ª via', 
+            'tipo': 'Identidade', 
+            'cliente': 'Pedro',
+            'entrada': '11/09/2018',
+            'saida': '11/09/2018'
+        },
+        {  'tema': 'documento', 
+           'categoria': '2ª via', 
+            'tipo': 'Identidade', 
+            'cliente': 'Pedro',
+            'entrada': '11/09/2018',
+            'saida': '11/09/2018'
+        }
       ]
     };
   }
@@ -167,39 +336,62 @@ class Admin extends Component {
           </p>
         </section>
         <Section>
-          <Titulo>Pedidos:</Titulo>
+          <Solicitacoes>
+            <Titulo>Novas solicitações:</Titulo>
+            <ContainerSolicitacoesItens>
+              <SolicitacoesItens>
+                <ImageSolicitacoes src="./rg.png" />
+                <button>Documentos</button>
+              </SolicitacoesItens>
+              <SolicitacoesItens>
+                <ImageSolicitacoes src="./emprego.png" />
+                <button>Emprego</button>
+              </SolicitacoesItens>
+              <SolicitacoesItens>
+                <ImageSolicitacoes src="negocios.png" />
+                <button>Negócios</button>
+              </SolicitacoesItens>
+            </ContainerSolicitacoesItens>
+          </Solicitacoes>
           <ContainerPrincipal>
-            <ContainerPrincipalCabecalho>
-              <ContainerPrincipalCabecalhoItems>
-                <HeaderTable>Nome</HeaderTable>
-                <HeaderTable>Whatsapp</HeaderTable>
-                <HeaderTable>Nome completo</HeaderTable>
-                <HeaderTable>Nome do pai</HeaderTable>
-                <HeaderTable>Nome da mãe</HeaderTable>
-                <HeaderTable>Serviço</HeaderTable>
-              </ContainerPrincipalCabecalhoItems>
-            </ContainerPrincipalCabecalho>
-            <ContainerConteudo>
-              {
-                this.state.pedidos.map(item => {
-                  return (
-                    <Row>
-                      <CelTable value={item['nome']} />
-                      <CelTable value={item['whatsapp']} />
-                      <CelTable value={item['nome-completo']} />
-                      <CelTable value={item['nome-do-pai']} />
-                      <CelTable value={item['nome-da-mae']} />
-                      <CelTable value={item['servico']} />
-                    </Row>
+            <CabecalhoFinalizados>
+              <Titulo>Processos finalizados:</Titulo>
+            </CabecalhoFinalizados>
+            <ContainerTabela>
+              <ContainerTabelaCabecalho>
+                <ContainerTabelaCabecalhoItems>
+                  <HeaderTable>Tema</HeaderTable>
+                  <HeaderTable>Categoria</HeaderTable>
+                  <HeaderTable>Tipo</HeaderTable>
+                  <HeaderTable>Cliente</HeaderTable>
+                  <HeaderTable>Entrada</HeaderTable>
+                  <HeaderTable>Saida</HeaderTable>
+                  <HeaderTable>Pendências</HeaderTable>
+                  <HeaderTable>Mensagens</HeaderTable>
+                </ContainerTabelaCabecalhoItems>
+              </ContainerTabelaCabecalho>
+              <ContainerConteudo>
+                {
+                  this.state.pedidos.map(item => {
+                    return (
+                      <Row>
+                        <CelTable value={item['tema']} />
+                        <CelTable value={item['categoria']} />
+                        <CelTable value={item['tipo']} />
+                        <CelTable value={item['cliente']} />
+                        <CelTable value={item['entrada']} />
+                        <CelTable value={item['saida']} />
+                      </Row>
                     )
-                })
-              }
+                  })
+                }
               </ContainerConteudo>
+            </ContainerTabela>
           </ContainerPrincipal>
         </Section>
         <Footer />
-      </Container>);
-    }
-  }
+      </Container>
+    )
+  }}
 
 export default Admin;

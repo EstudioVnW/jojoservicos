@@ -14,16 +14,6 @@ const Container = styled.div`
   }
 `;
 
-// const ContainerItems = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   flex-direction: column;
-// `;
-
-
 const Items = styled.p`
   width: 100%;
   height: 7.7%;
@@ -38,21 +28,19 @@ const Items = styled.p`
 
 const Entrada = () =>
   <Container>
-    {/* <ContainerItems> */}
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-      <Items>11/09/2018</Items>
-    {/* </ContainerItems> */}
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
+    <Items>11/09/2018</Items>
   </Container>
 
 export default Entrada;

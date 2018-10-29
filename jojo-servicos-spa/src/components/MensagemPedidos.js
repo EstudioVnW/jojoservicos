@@ -15,16 +15,6 @@ const Container = styled.div`
   }
 `;
 
-// const Container_images = styled.div` 
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   flex-direction: column;
-
-// `;
-
 const Items = styled.p`
   width: 100%;
   height: 7.7%;
@@ -48,47 +38,45 @@ const MensageIcon = styled.img`
 
 const MensagemPedidos = () =>
   <Container>
-    {/* <Container_images> */}
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-      <Items>
-        <MensageIcon src="./mensage.svg" alt="Mensagem" />
-      </Items>
-    {/* </Container_images> */}
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
+    <Items>
+      <MensageIcon src="./mensage.svg" alt="Mensagem" />
+    </Items>
   </Container>
 
 export default MensagemPedidos;

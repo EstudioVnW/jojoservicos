@@ -32,7 +32,7 @@ const Value = styled.p`
 
 const CelTable = (props) =>
   <Container>
-      <Value>{props.value || 'null'}</Value>
+    <Value>{props.value || 'null'}</Value>
   </Container>
 
 export default CelTable;
