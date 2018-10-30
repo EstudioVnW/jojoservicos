@@ -34,6 +34,7 @@ const Solicitacoes = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
 
 `;
@@ -42,13 +43,15 @@ const ContainerSolicitacoesItens = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
+  align-items: center;
 
 `;
 
 const SolicitacoesItens = styled.div`
   width: 100%;
-  height: 100%;
-  margin: 0 80px;
+  height: 90%;
+  /* margin: 0 90px; */
+  margin: 0 7%;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -59,9 +62,51 @@ const SolicitacoesItens = styled.div`
 
 `;
 
-const ImageSolicitacoes = styled.img`
-  width: 55%;
-  height: 70%;
+const ImagesSolicitacoes = styled.img`
+  width: 50%;
+  height: 50%;
+`;
+
+const ButtonDocumentos = styled.button`
+  width: 60%;
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fff;
+  font-family: Helvetica;
+  border: #000;
+  border-radius: 18px;
+  outline: none;
+  background: linear-gradient(#3358A4, #0C275E);
+`;
+
+const ButtonEmprego = styled.button`
+  width: 60%;
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fff;
+  font-family: Helvetica;
+  border: #000;
+  border-radius: 18px;
+  outline: none;
+  background: linear-gradient(#83219A, #40044E);
+`;
+
+const ButtonNegocios = styled.button`
+  width: 60%;
+  height: 13%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: #fff;
+  font-family: Helvetica;
+  border: #000;
+  border-radius: 18px;
+  outline: none;
+  background: linear-gradient(#69B42E, #34670C);
 `;
 
 const ContainerPrincipal = styled.div`
@@ -69,23 +114,31 @@ const ContainerPrincipal = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+`;
 
+const ContainerPrincipalConteudo = styled.div`
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const CabecalhoFinalizados = styled.div`
   width: 90%;
-  height: 50%;
+  height: 40%;
   display: flex;
   align-items: center;
-
 `;
 
 const Titulo = styled.div`
   width: 100%;
-  height: 50%;
+  height: 30%;
+  padding: 0 98px;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-end;
   font-size: 28px;
   color: #fff;
   font-family: Helvetica;
@@ -102,14 +155,20 @@ const Titulo = styled.div`
 
 const ContainerTabela = styled.div`
   width: 85%;
-  height: 100%;
-  /* margin-bottom: 50px; */
+  height: 100vh;
   display: flex;
   align-self: center;
   flex-direction: column;
   background-color: #fff; 
   border: #fff solid 1px;
   border-radius: 5px;
+  /* width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px; */
+
   @media(max-width: 640px){
     width: 85%;
     height: 100%;
@@ -120,9 +179,6 @@ const ContainerTabela = styled.div`
 const ContainerTabelaCabecalho = styled.div`
   width: 100%;
   height: 40px;
-  /* display: flex; */
-  /* justify-content: space-between; */
-  /* align-items: center; */
   color: #fff;
   font-size: 15px;
   font-family: Helvetica;
@@ -130,6 +186,15 @@ const ContainerTabelaCabecalho = styled.div`
   background-color: #3358A4;
   border: #fff solid 1px;
   border-radius: 5px 5px 0 0;
+  /* width: 80%;
+  height: 15%;
+  color: #fff;
+  font-size: 15px;
+  font-family: Helvetica;
+  font-weight: bold;
+  background-color: #3358A4;
+  border: #fff solid 1px;
+  border-radius: 8px 8px 0 0; */
   @media(max-width: 640px){
     width: 100%;
     display: flex;
@@ -150,118 +215,7 @@ const HeaderTable = styled.div`
 
 `;
 
-// const CabecalhoParagrafo = styled.div`
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   align-self: center;
-//   align-items: center;
-// `;
-
-// const CabecalhoParagrafoStatus = styled.div`
-//   /* width: 80%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center; */
-//   /* width: 10%; */
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     display: none;
-//   }
-// `;
-
-// const CabecalhoParagrafoTema = styled.div` 
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     display: none;
-//   }
-// `;
-
-// const CabecalhoParagrafoCategoria = styled.div` 
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     width: 100%;
-//     display: flex;  
-    
-//   }
-// `;
-
-// const CabecalhoParagrafoTipo = styled.div` 
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     width: 100%;
-//     display: flex;
-//     justify-content: flex-start;
-//   }
-// `;
-
-// const CabecalhoParagrafoCliente = styled.div` 
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     width: 80%;
-//     display: flex;
-//     justify-content: flex-start;
-//   }
-// `;
-
-// const CabecalhoParagrafoEntrada = styled.div` 
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     display: none;
-//   }
-// `;
-
-// const CabecalhoParagrafoSaida = styled.div`
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     display: none;
-//   }
-// `;
-
-// const CabecalhoParagrafoPendencias = styled.div` 
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     display: none;
-//   }
-// `;
-
-// const CabecalhoParagrafoMensagem = styled.div`
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   @media(max-width: 640px){
-//     width: 80%;
-//     display: flex;
-//     justify-content: center;
-//   }
-// `;
-
-const ContainerConteudo = styled.div` 
+const ContainerTabelaConteudo = styled.div` 
   width: 100%;
   height: 100%;
   display: flex;
@@ -269,7 +223,9 @@ const ContainerConteudo = styled.div`
   flex-direction: column;
   color: #000;
   font-family: Helvetica;
+  border: #fff solid 1px;
   overflow-y: scroll;
+  background-color: #fff;
   @media(max-width: 640px){
     width: 100%;
     height: 100vh;
@@ -279,9 +235,26 @@ const ContainerConteudo = styled.div`
 
 const Row = styled.div` 
   width: 100%;
+  height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: row;
 `;
+
+const MensageIcon = styled.img`
+  width: 20%;
+  height: 10%;
+
+`;
+
+const Abelha = styled.div`
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
+
 
 class Admin extends Component {
   constructor(props){
@@ -293,35 +266,40 @@ class Admin extends Component {
             'tipo': 'Identidade', 
             'cliente': 'Pedro',
             'entrada': '11/09/2018',
-            'saida': '11/09/2018'
+            'saida': '11/09/2018',
+            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
         {  'tema': 'documento', 
            'categoria': '2ª via', 
             'tipo': 'Identidade', 
             'cliente': 'Pedro',
             'entrada': '11/09/2018',
-            'saida': '11/09/2018'
+            'saida': '11/09/2018',
+            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
         {  'tema': 'documento', 
            'categoria': '2ª via', 
             'tipo': 'Identidade', 
             'cliente': 'Pedro',
             'entrada': '11/09/2018',
-            'saida': '11/09/2018'
+            'saida': '11/09/2018',
+            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
         {  'tema': 'documento', 
            'categoria': '2ª via', 
             'tipo': 'Identidade', 
             'cliente': 'Pedro',
             'entrada': '11/09/2018',
-            'saida': '11/09/2018'
+            'saida': '11/09/2018',
+            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
         {  'tema': 'documento', 
            'categoria': '2ª via', 
             'tipo': 'Identidade', 
             'cliente': 'Pedro',
             'entrada': '11/09/2018',
-            'saida': '11/09/2018'
+            'saida': '11/09/2018',
+            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         }
       ]
     };
@@ -336,57 +314,62 @@ class Admin extends Component {
           </p>
         </section>
         <Section>
-          <Solicitacoes>
-            <Titulo>Novas solicitações:</Titulo>
-            <ContainerSolicitacoesItens>
-              <SolicitacoesItens>
-                <ImageSolicitacoes src="./rg.png" />
-                <button>Documentos</button>
-              </SolicitacoesItens>
-              <SolicitacoesItens>
-                <ImageSolicitacoes src="./emprego.png" />
-                <button>Emprego</button>
-              </SolicitacoesItens>
-              <SolicitacoesItens>
-                <ImageSolicitacoes src="negocios.png" />
-                <button>Negócios</button>
-              </SolicitacoesItens>
-            </ContainerSolicitacoesItens>
-          </Solicitacoes>
+          <Abelha>
+            <Solicitacoes>
+              <Titulo>Novas solicitações:</Titulo>
+              <ContainerSolicitacoesItens>
+                <SolicitacoesItens>
+                  <ImagesSolicitacoes src="./rg.png" />
+                  <ButtonDocumentos>Documentos</ButtonDocumentos>
+                </SolicitacoesItens>
+                <SolicitacoesItens>
+                  <ImagesSolicitacoes src="./emprego.png" />
+                  <ButtonEmprego>Emprego</ButtonEmprego>
+                </SolicitacoesItens>
+                <SolicitacoesItens>
+                  <ImagesSolicitacoes src="negocios.png" />
+                  <ButtonNegocios>Negócios</ButtonNegocios>
+                </SolicitacoesItens>
+              </ContainerSolicitacoesItens>
+            </Solicitacoes>
+          </Abelha>
           <ContainerPrincipal>
-            <CabecalhoFinalizados>
-              <Titulo>Processos finalizados:</Titulo>
-            </CabecalhoFinalizados>
-            <ContainerTabela>
-              <ContainerTabelaCabecalho>
-                <ContainerTabelaCabecalhoItems>
-                  <HeaderTable>Tema</HeaderTable>
-                  <HeaderTable>Categoria</HeaderTable>
-                  <HeaderTable>Tipo</HeaderTable>
-                  <HeaderTable>Cliente</HeaderTable>
-                  <HeaderTable>Entrada</HeaderTable>
-                  <HeaderTable>Saida</HeaderTable>
-                  <HeaderTable>Pendências</HeaderTable>
-                  <HeaderTable>Mensagens</HeaderTable>
-                </ContainerTabelaCabecalhoItems>
-              </ContainerTabelaCabecalho>
-              <ContainerConteudo>
-                {
-                  this.state.pedidos.map(item => {
-                    return (
-                      <Row>
-                        <CelTable value={item['tema']} />
-                        <CelTable value={item['categoria']} />
-                        <CelTable value={item['tipo']} />
-                        <CelTable value={item['cliente']} />
-                        <CelTable value={item['entrada']} />
-                        <CelTable value={item['saida']} />
-                      </Row>
-                    )
-                  })
-                }
-              </ContainerConteudo>
-            </ContainerTabela>
+            <ContainerPrincipalConteudo>
+              <CabecalhoFinalizados>
+                <Titulo>Processos finalizados:</Titulo>
+              </CabecalhoFinalizados>
+              <ContainerTabela>
+                <ContainerTabelaCabecalho>
+                  <ContainerTabelaCabecalhoItems>
+                    <HeaderTable>Tema</HeaderTable>
+                    <HeaderTable>Categoria</HeaderTable>
+                    <HeaderTable>Tipo</HeaderTable>
+                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Entrada</HeaderTable>
+                    <HeaderTable>Saida</HeaderTable>
+                    <HeaderTable>Pendências</HeaderTable>
+                    <HeaderTable>Mensagens</HeaderTable>
+                  </ContainerTabelaCabecalhoItems>
+                </ContainerTabelaCabecalho>
+                <ContainerTabelaConteudo>
+                  {
+                    this.state.pedidos.map(item => {
+                      return (
+                        <Row>
+                          <CelTable value={item['tema']} />
+                          <CelTable value={item['categoria']} />
+                          <CelTable value={item['tipo']} />
+                          <CelTable value={item['cliente']} />
+                          <CelTable value={item['entrada']} />
+                          <CelTable value={item['saida']} />
+                          <CelTable value={item['mensagem']} />
+                        </Row>
+                      )
+                    })
+                  }
+                </ContainerTabelaConteudo>
+              </ContainerTabela>
+            </ContainerPrincipalConteudo>
           </ContainerPrincipal>
         </Section>
         <Footer />
