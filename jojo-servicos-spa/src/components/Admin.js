@@ -42,6 +42,7 @@ const Solicitacoes = styled.div`
 const ContainerSolicitacoesItens = styled.div`
   width: 100%;
   height: 100%;
+  padding: 0 90px;
   display: flex;
   align-items: center;
 
@@ -51,7 +52,7 @@ const SolicitacoesItens = styled.div`
   width: 100%;
   height: 90%;
   /* margin: 0 90px; */
-  margin: 0 7%;
+  margin: 0 6%;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
