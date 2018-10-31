@@ -7,6 +7,7 @@ import './index.css';
 import App from './App';
 import Login from './components/Login';
 import Admin from './components/Admin';
+import Documents from './components/Documents';
 
 import gerarId from './services/gerar-id-aleatorio';
 import criarDocumento from './services/criar-documento';
@@ -24,6 +25,7 @@ ReactDOM.render(
             <Route exact path="/" render={ (props) => <App {...props} sessionId={__SESSION_ID} doc={doc} /> } />
             <Route path="/login" component={Login} />
             <Route path="/admin" component={Admin} />
+            <Route path="/documents" component={Documents} />
         </Switch>
     </BrowserRouter>, document.getElementById('root'));
 

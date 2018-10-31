@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 
 import Footer from './Footer';
+
 import CelTable from './CelTable';
 
 import styled from 'styled-components';
+import { style } from 'glamor';
 
 const Container = styled.div`
   width: 100%;
@@ -12,6 +14,64 @@ const Container = styled.div`
     height: 100vh;
   }
 `;
+
+const ContainerTopo = styled.div`
+  width: 100%;
+	height: 80px;
+	padding: 0 3%;
+	border-style: none;
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #FFFFFF;
+  z-index:1;
+  @media (max-width: 640px){
+		width: 100%;
+    min-height: 12vh;
+    display: flex;
+    justify-content: center;
+	}
+}
+`;
+
+const ContainerTopoDocumento = styled.div`
+  width: 20%;
+  height: 100%;
+  margin: 0 0 0 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
+const ImageTopoLogoDocumento = styled.img` 
+  width: 20%;
+  height: 50%;
+  padding-right: 2%;
+  @media (max-width: 640px){
+		width: 110px;
+		margin: 0 0 0 5%;
+	}
+`;
+
+const ParagrafoTopoDocumento = styled.div`
+  color: #3358A4;
+  font-size: 28px;
+  font-family: Helvetica;
+  font-weight: bold;
+  border-bottom: 7px solid #69B42E;
+
+`;
+
+const ImageTopoLogoJojo = styled.img`
+  width: 10vw;
+  padding-right: 2%;
+  @media (max-width: 640px){
+		width: 110px;
+		margin: 0 0 0 5%;
+	}
+`;
+
 
 const Section = styled.section`
   width: 100%;
@@ -37,11 +97,9 @@ const Solicitacoes = styled.div`
   justify-content: center;
   flex-direction: column;
   @media(max-width: 640px){
-    width: 1px;
     
   }
 `;
-
 
 const SolicitacoesConteudo = styled.div`
   width: 100%;
@@ -50,79 +108,9 @@ const SolicitacoesConteudo = styled.div`
   align-items: center;
   flex-direction: column;
   @media(max-width: 640px){
-    display: none;
+    
     
   }
-`;
-
-const ContainerSolicitacoesItens = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 0 90px;
-  display: flex;
-  align-items: center;
-
-`;
-
-const SolicitacoesItens = styled.div`
-  width: 100%;
-  height: 100%;
-  /* margin: 0 90px; */
-  margin: 0 5%;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  background-color: #F7F7F7;
-  border: #3358A4 1px;
-  border-radius: 55px;
-`;
-
-const ImagesSolicitacoes = styled.img`
-  width: 50%;
-  height: 50%;
-`;
-
-const ButtonDocumentos = styled.button`
-  width: 60%;
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: #fff;
-  font-family: Helvetica;
-  border: #000;
-  border-radius: 18px;
-  outline: none;
-  background: linear-gradient(#3358A4, #0C275E);
-`;
-
-const ButtonEmprego = styled.button`
-  width: 60%;
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: #fff;
-  font-family: Helvetica;
-  border: #000;
-  border-radius: 18px;
-  outline: none;
-  background: linear-gradient(#83219A, #40044E);
-`;
-
-const ButtonNegocios = styled.button`
-  width: 60%;
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: #fff;
-  font-family: Helvetica;
-  border: #000;
-  border-radius: 18px;
-  outline: none;
-  background: linear-gradient(#69B42E, #34670C);
 `;
 
 const ContainerPrincipal = styled.div`
@@ -150,12 +138,12 @@ const CabecalhoFinalizados = styled.div`
 
 const Titulo = styled.div`
   width: 100%;
-  height: 30%;
+  height: 40%;
   padding: 0 98px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 28px;
+  font-size: 25px;
   color: #fff;
   font-family: Helvetica;
   font-weight: bold;
@@ -171,7 +159,7 @@ const Titulo = styled.div`
 
 const ContainerTabela = styled.div`
   width: 85%;
-  height: 100vh;
+  height: 70vh;
   display: flex;
   align-self: center;
   flex-direction: column;
@@ -264,67 +252,59 @@ const Row = styled.div`
 const MensageIcon = styled.img`
   width: 80%;
   height: 64%;
-
-`;
-
-const A = styled.a`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
 `;
 
 
 
-class Admin extends Component {
+class Documents extends Component {
   constructor(props){
     super(props);
     this.state = {
       pedidos: [
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
+        {  'status': 'Finalizado', 
+            'cliente': 'Pedro Silva', 
+            'telefone': '91239-9999', 
+            'email': 'pedrosilva@gmail.com',
+            'categoria': 'Carteira de trabalho',
+            'tipo': '2ª via',
+            'justificativa': 'Dano ou sem...',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
+        {  'status': 'Finalizado', 
+            'cliente': 'Jaqueline Rodrigues', 
+            'telefone': '99321-9456', 
+            'email': 'jaquelinerodrig@gmail...',
+            'categoria': 'Identidade',
+            'tipo': '2ª via',
+            'justificativa': 'Furto',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
-            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        {  'status': 'Finalizado', 
+          'cliente': 'Igor Melo', 
+          'telefone': '91029-5299', 
+          'email': 'igormelo@gmail.com',
+          'categoria': 'Título de eleitor',
+          'tipo': '2ª via',
+          'justificativa': 'Perda',
+          'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
-            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        { 'status': 'Finalizado', 
+          'cliente': 'Maria Eugênia', 
+          'telefone': '99965-7165', 
+          'email': 'marieugenia@gmail..',
+          'categoria': 'Boletim de ocorrência',
+          'tipo': '1ª via',
+          'justificativa': '-',
+          'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
-            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        {  'status': 'Finalizado', 
+          'cliente': 'Gabriel Freitas', 
+          'telefone': '95479-9099', 
+          'email': 'gabrielfreitas@gmail.com',
+          'categoria': 'Alistamento',
+          'tipo': '2ª via',
+          'justificativa': 'Perda',
+          'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         }
       ]
     };
@@ -332,30 +312,49 @@ class Admin extends Component {
   render(){
     return (
       <Container>
-        <section className="caixa_topo">
-          <img className="caixa_topo--logo" src="./logo-jojo.svg" alt="logo Jojô" />
-          <p className="caixa_topo--texto">
-          Central de visualização de pedidos
-          </p>
-        </section>
+        <ContainerTopo>
+          <ImageTopoLogoJojo src="./logo-jojo.svg" alt="logo Jojô" />
+          <ContainerTopoDocumento>
+            <ParagrafoTopoDocumento>Documentos</ParagrafoTopoDocumento>
+            <ImageTopoLogoDocumento src="./rg.png" alt="logo RG" />
+          </ContainerTopoDocumento>
+        </ContainerTopo>
         <Section>
           <Solicitacoes>
             <SolicitacoesConteudo>
               <Titulo>Novas solicitações:</Titulo>
-              <ContainerSolicitacoesItens>
-                <SolicitacoesItens>
-                  <ImagesSolicitacoes src="./rg.png" />
-                  <A href="/Documents"><ButtonDocumentos>Documentos</ButtonDocumentos></A>
-                </SolicitacoesItens>
-                <SolicitacoesItens>
-                  <ImagesSolicitacoes src="./emprego.png" />
-                  <A href="#"><ButtonEmprego>Emprego</ButtonEmprego></A>
-                </SolicitacoesItens>
-                <SolicitacoesItens>
-                  <ImagesSolicitacoes src="negocios.png" />
-                  <A href="#"><ButtonNegocios>Negócios</ButtonNegocios></A>
-                </SolicitacoesItens>
-              </ContainerSolicitacoesItens>
+              <ContainerTabela>
+                <ContainerTabelaCabecalho>
+                  <ContainerTabelaCabecalhoItems>
+                    <HeaderTable>Status</HeaderTable>
+                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Telefone</HeaderTable>
+                    <HeaderTable>E-mail</HeaderTable>
+                    <HeaderTable>Categoria</HeaderTable>
+                    <HeaderTable>Tipo</HeaderTable>
+                    <HeaderTable>Justificativa</HeaderTable>
+                    <HeaderTable>Mensagens</HeaderTable>
+                  </ContainerTabelaCabecalhoItems>
+                </ContainerTabelaCabecalho>
+                <ContainerTabelaConteudo>
+                  {
+                    this.state.pedidos.map(item => {
+                      return (
+                        <Row>
+                          <CelTable value={item['status']} />
+                          <CelTable value={item['cliente']} />
+                          <CelTable value={item['telefone']} />
+                          <CelTable value={item['email']} />
+                          <CelTable value={item['categoria']} />
+                          <CelTable value={item['tipo']} />
+                          <CelTable value={item['justificativa']} />
+                          <CelTable value={item['mensagem']} />
+                        </Row>
+                      )
+                    })
+                  }
+                </ContainerTabelaConteudo>
+              </ContainerTabela>
             </SolicitacoesConteudo>
           </Solicitacoes>
           <ContainerPrincipal>
@@ -366,13 +365,13 @@ class Admin extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Tema</HeaderTable>
+                    <HeaderTable>Status</HeaderTable>
+                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Telefone</HeaderTable>
+                    <HeaderTable>E-mail</HeaderTable>
                     <HeaderTable>Categoria</HeaderTable>
                     <HeaderTable>Tipo</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
-                    <HeaderTable>Entrada</HeaderTable>
-                    <HeaderTable>Saida</HeaderTable>
-                    <HeaderTable>Pendências</HeaderTable>
+                    <HeaderTable>Justificativa</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>
                 </ContainerTabelaCabecalho>
@@ -381,13 +380,13 @@ class Admin extends Component {
                     this.state.pedidos.map(item => {
                       return (
                         <Row>
-                          <CelTable value={item['tema']} />
+                          <CelTable value={item['status']} />
+                          <CelTable value={item['cliente']} />
+                          <CelTable value={item['telefone']} />
+                          <CelTable value={item['email']} />
                           <CelTable value={item['categoria']} />
                           <CelTable value={item['tipo']} />
-                          <CelTable value={item['cliente']} />
-                          <CelTable value={item['entrada']} />
-                          <CelTable value={item['saida']} />
-                          <CelTable value={item['pendencias']} />
+                          <CelTable value={item['justificativa']} />
                           <CelTable value={item['mensagem']} />
                         </Row>
                       )
@@ -402,5 +401,5 @@ class Admin extends Component {
       </Container>
     )
   }}
-
-export default Admin;
+  
+export default Documents;
