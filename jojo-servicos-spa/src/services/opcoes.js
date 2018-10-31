@@ -47,6 +47,18 @@ opcoes['exibir-opcoes-identidade-qual-via'].push(
   }
 );
 
+opcoes['exibir-opcoes-titulo-qual-via'] = [];
+opcoes['exibir-opcoes-titulo-qual-via'].push(
+  {
+    label: 'Primeira Via',
+    evento: 'agendar-titulo-primeira-via'
+  },
+  {
+    label: 'Segunda Via',
+    evento: 'agendar-titulo-segunda-via'
+  }
+);
+
 opcoes['exibir-opcoes-ident-seg-via-motivos'] = [];
 opcoes['exibir-opcoes-ident-seg-via-motivos'].push(
   {
@@ -88,6 +100,18 @@ opcoes['exibir-opcoes-titulo-qual-via'].push(
   {
     label: 'Segunda Via',
     evento: 'agendar-titulo-segunda-via'
+  }
+);
+
+opcoes['exibir-opcoes-titulo-segunda-via-motivo'] = [];
+opcoes['exibir-opcoes-titulo-segunda-via-motivo'].push(
+  {
+    label: 'Perda',
+    evento: 'agendar-titulo-segunda-via-motivo-perda'
+  },
+  {
+    label: 'Roubo',
+    evento: 'agendar-titulo-segunda-via-motivo-roubo'
   }
 );
 
@@ -169,6 +193,30 @@ opcoes['exibir-opcoes-completou-ensino-medio'].push(
   {
     label: 'Não',
     evento: 'completou-ensino-medio-nao'
+  }
+);
+
+opcoes['exibir-opcoes-possui-curriculo'] = [];
+opcoes['exibir-opcoes-possui-curriculo'].push(
+  {
+    label: 'Sim',
+    evento: 'possui-curriculo-sim'
+  },
+  {
+    label: 'Não',
+    evento: 'possui-curriculo-nao'
+  }
+);
+
+opcoes['exibir-opcoes-deseja-ser-jovem-aprendiz'] = [];
+opcoes['exibir-opcoes-deseja-ser-jovem-aprendiz'].push(
+  {
+    label: 'Sim',
+    evento: 'deseja-ser-jovem-aprendiz-sim'
+  },
+  {
+    label: 'Não',
+    evento: 'deseja-ser-jovem-aprendiz-nao'
   }
 );
 
