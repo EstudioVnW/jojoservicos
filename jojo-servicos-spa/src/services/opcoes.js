@@ -94,11 +94,11 @@ opcoes['exibir-opcoes-ctps-voce-tem-mais-que-14-anos'].push(
 opcoes['exibir-opcoes-ctps-seg-via-motivos'] = [];
 opcoes['exibir-opcoes-ctps-seg-via-motivos'].push(
   {
-    label: 'Perda-roubo-extravio-furto',
+    label: 'Perda roubo extravio furto',
     evento: 'ctps-segunda-via-perda-ou-dano'
   },
   {
-    label:'Carteira-danificada-ou-sem-espaco-pra-anotacoes',
+    label:'Carteira danificada ou sem espaco pra anotacoes',
     evento:'ctps-segunda-via-danificada-ou-sem-espaco'
   }
 );
