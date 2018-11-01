@@ -272,6 +272,7 @@ const A = styled.a`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  text-decoration:none; 
 `;
 
 
@@ -349,11 +350,11 @@ class Admin extends Component {
                 </SolicitacoesItens>
                 <SolicitacoesItens>
                   <ImagesSolicitacoes src="./emprego.png" />
-                  <A href="#"><ButtonEmprego>Emprego</ButtonEmprego></A>
+                  <A href="/Jobs"><ButtonEmprego>Emprego</ButtonEmprego></A>
                 </SolicitacoesItens>
                 <SolicitacoesItens>
                   <ImagesSolicitacoes src="negocios.png" />
-                  <A href="#"><ButtonNegocios>Negócios</ButtonNegocios></A>
+                  <A href="/Business"><ButtonNegocios>Negócios</ButtonNegocios></A>
                 </SolicitacoesItens>
               </ContainerSolicitacoesItens>
             </SolicitacoesConteudo>

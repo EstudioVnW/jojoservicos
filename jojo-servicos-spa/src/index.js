@@ -8,6 +8,8 @@ import App from './App';
 import Login from './components/Login';
 import Admin from './components/Admin';
 import Documents from './components/Documents';
+import Jobs from './components/Jobs';
+import Business from './components/Business';
 
 import gerarId from './services/gerar-id-aleatorio';
 import criarDocumento from './services/criar-documento';
@@ -26,6 +28,8 @@ ReactDOM.render(
             <Route path="/login" component={Login} />
             <Route path="/admin" component={Admin} />
             <Route path="/documents" component={Documents} />
+            <Route path="/jobs" component={Jobs} />
+            <Route path="/business" component={Business} />
         </Switch>
     </BrowserRouter>, document.getElementById('root'));
 

@@ -26,7 +26,7 @@ const Value = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
+  font-size: 14px;
   font-family: Helvetica;
   @media(max-width: 640px){
     /* width: 100%;

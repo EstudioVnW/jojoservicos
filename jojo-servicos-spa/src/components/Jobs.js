@@ -27,7 +27,7 @@ const ContainerTopo = styled.div`
 	background-color: #FFFFFF;
   z-index:1;
   @media (max-width: 640px){
-		width: 100%;
+	  width: 100%;
     min-height: 12vh;
     display: flex;
     justify-content: center;
@@ -55,12 +55,11 @@ const ImageTopoLogoDocumento = styled.img`
 `;
 
 const ParagrafoTopoDocumento = styled.div`
-  color: #3358A4;
+  color: #83219A;
   font-size: 28px;
   font-family: Helvetica;
   font-weight: bold;
   border-bottom: 7px solid #69B42E;
-
 `;
 
 const ImageTopoLogoJojo = styled.img`
@@ -172,7 +171,6 @@ const ContainerTabela = styled.div`
   align-items: center;
   flex-direction: column;
   border-radius: 5px; */
-
   @media(max-width: 640px){
     width: 85%;
     height: 100%;
@@ -187,18 +185,9 @@ const ContainerTabelaCabecalho = styled.div`
   font-size: 15px;
   font-family: Helvetica;
   font-weight: bold;
-  background-color: #3358A4;
+  background-color: #83219A;
   border: #fff solid 1px;
   border-radius: 5px 5px 0 0;
-  /* width: 80%;
-  height: 15%;
-  color: #fff;
-  font-size: 15px;
-  font-family: Helvetica;
-  font-weight: bold;
-  background-color: #3358A4;
-  border: #fff solid 1px;
-  border-radius: 8px 8px 0 0; */
   @media(max-width: 640px){
     width: 100%;
     display: flex;
@@ -254,56 +243,66 @@ const MensageIcon = styled.img`
   height: 64%;
 `;
 
+const ComEnvioIcon = styled.img`
+  width: 80%;
+  height: 64%;
+`;
+
+const SemEnvioIcon = styled.img`
+  width: 80%;
+  height: 64%;
+`;
 
 
-class Documents extends Component {
+
+class Jobs extends Component {
   constructor(props){
     super(props);
     this.state = {
       pedidos: [
-        {  'status': 'Finalizado', 
+        {  'status': 'Pendente', 
             'cliente': 'Pedro Silva', 
             'telefone': '91239-9999', 
             'email': 'pedrosilva@gmail.com',
-            'categoria': 'Carteira de trabalho',
-            'tipo': '2ª via',
-            'justificativa': 'Dano ou sem...',
+            'categoria': 'Jovem Aprendiz',
+            'curriculo': <ComEnvioIcon src="./.svg" alt="Com Envio" />,
+            'envio': 'Com envio',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'status': 'Finalizado', 
+        {  'status': 'Análise', 
             'cliente': 'Jaqueline Rodrigues', 
             'telefone': '99321-9456', 
             'email': 'jaquerodrigues@gmail...',
-            'categoria': 'Identidade',
-            'tipo': '2ª via',
-            'justificativa': 'Furto',
+            'categoria': 'Emprego Formal',
+            'curriculo': <SemEnvioIcon src="./.svg" alt="Sem Envio" />,
+            'envio': 'Sem Envio',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
         {  'status': 'Finalizado', 
           'cliente': 'Igor Melo', 
           'telefone': '91029-5299', 
           'email': 'igormelo@gmail.com',
-          'categoria': 'Título de eleitor',
-          'tipo': '2ª via',
-          'justificativa': 'Perda',
+          'categoria': 'Emprego Formal',
+          'curriculo': <ComEnvioIcon src="./.svg" alt="Com Envio" />,
+          'envio': 'Com Envio',
           'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        { 'status': 'Finalizado', 
+        { 'status': 'Pendente', 
           'cliente': 'Maria Eugênia', 
           'telefone': '99965-7165', 
           'email': 'marieugenia@gmail..',
-          'categoria': 'Boletim de ocorrência',
-          'tipo': '1ª via',
-          'justificativa': '-',
+          'categoria': 'Jovem Aprendiz',
+          'curriculo': <ComEnvioIcon src="./.svg" alt="Com Envio" />,
+          'envio': 'Com Envio',
           'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'status': 'Finalizado', 
+        {  'status': 'Análise', 
           'cliente': 'Gabriel Freitas', 
           'telefone': '95479-9099', 
           'email': 'gabrielfreitas@gmail.com',
-          'categoria': 'Alistamento',
-          'tipo': '2ª via',
-          'justificativa': 'Perda',
+          'categoria': 'Emprego Formal',
+          'curriculo': <SemEnvioIcon src="./.svg" alt="Sem envio" />,
+          'envio': 'Sem Envio',
           'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         }
       ]
@@ -315,8 +314,8 @@ class Documents extends Component {
         <ContainerTopo>
           <ImageTopoLogoJojo src="./logo-jojo.svg" alt="logo Jojô" />
           <ContainerTopoDocumento>
-            <ParagrafoTopoDocumento>Documentos</ParagrafoTopoDocumento>
-            <ImageTopoLogoDocumento src="./rg.png" alt="logo RG" />
+            <ParagrafoTopoDocumento>Empregos</ParagrafoTopoDocumento>
+            <ImageTopoLogoDocumento src="./emprego.png" alt="logo emprego" />
           </ContainerTopoDocumento>
         </ContainerTopo>
         <Section>
@@ -331,8 +330,8 @@ class Documents extends Component {
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
                     <HeaderTable>Categoria</HeaderTable>
-                    <HeaderTable>Tipo</HeaderTable>
-                    <HeaderTable>Justificativa</HeaderTable>
+                    <HeaderTable>Currículo</HeaderTable>
+                    <HeaderTable>Envio</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>
                 </ContainerTabelaCabecalho>
@@ -346,8 +345,8 @@ class Documents extends Component {
                           <CelTable value={item['telefone']} />
                           <CelTable value={item['email']} />
                           <CelTable value={item['categoria']} />
-                          <CelTable value={item['tipo']} />
-                          <CelTable value={item['justificativa']} />
+                          <CelTable value={item['curriculo']} />
+                          <CelTable value={item['envio']} />
                           <CelTable value={item['mensagem']} />
                         </Row>
                       )
@@ -370,8 +369,8 @@ class Documents extends Component {
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
                     <HeaderTable>Categoria</HeaderTable>
-                    <HeaderTable>Tipo</HeaderTable>
-                    <HeaderTable>Justificativa</HeaderTable>
+                    <HeaderTable>Currículo</HeaderTable>
+                    <HeaderTable>Envio</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>
                 </ContainerTabelaCabecalho>
@@ -385,8 +384,8 @@ class Documents extends Component {
                           <CelTable value={item['telefone']} />
                           <CelTable value={item['email']} />
                           <CelTable value={item['categoria']} />
-                          <CelTable value={item['tipo']} />
-                          <CelTable value={item['justificativa']} />
+                          <CelTable value={item['curriculo']} />
+                          <CelTable value={item['envio']} />
                           <CelTable value={item['mensagem']} />
                         </Row>
                       )
@@ -402,4 +401,4 @@ class Documents extends Component {
     )
   }}
   
-export default Documents;
+export default Jobs;
