@@ -32,20 +32,22 @@ const Section = styled.section`
 
 const Solicitacoes = styled.div`
   width: 100%;
-  height: 90%;
+  height: 100%;
+  padding: 20px 0 0 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  
   @media(max-width: 640px){
-    width: 1px;
+    display: none;
     
   }
 `;
 
 
-const SolicitacoesConteudo = styled.div`
+const SolicitacoesContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 50vh;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -55,22 +57,30 @@ const SolicitacoesConteudo = styled.div`
   }
 `;
 
-const ContainerSolicitacoesItens = styled.div`
+const ContainerSolicitacoesConteudo = styled.div`
   width: 100%;
   height: 100%;
-  padding: 0 90px;
   display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ContainerSolicitacoesItens = styled.div`
+  width: 80%;
+  height: 90%;
+  /* padding: 0 90px; */
+  display: flex;
+  justify-content: space-around;
   align-items: center;
 
 `;
 
 const SolicitacoesItens = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 25%;
+  height: 95%;
   /* margin: 0 90px; */
-  margin: 0 5%;
+  /* margin: 0 1%; */
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   background-color: #F7F7F7;
@@ -78,9 +88,33 @@ const SolicitacoesItens = styled.div`
   border-radius: 55px;
 `;
 
+const SolicitacoesItensIMG = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+`;
+
+const SolicitacoesItensLink = styled.div`
+  width: 100%;
+  height: 30%;
+  display: flex;
+  align-items: flex-end;
+`;
+
+const A = styled.a`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-decoration:none; 
+`;
+
 const ImagesSolicitacoes = styled.img`
   width: 50%;
-  height: 50%;
+  height: 70%;
 `;
 
 const ButtonDocumentos = styled.button`
@@ -128,9 +162,14 @@ const ButtonNegocios = styled.button`
 const ContainerPrincipal = styled.div`
   width: 100%;
   height: 100%;
+  padding: 20px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media(max-width: 640px){
+    padding: 0;
+    
+  }
 `;
 
 const ContainerPrincipalConteudo = styled.div`
@@ -143,15 +182,22 @@ const ContainerPrincipalConteudo = styled.div`
 
 const CabecalhoFinalizados = styled.div`
   width: 90%;
-  height: 40%;
+  height: 55%;
   display: flex;
   align-items: center;
+  @media(max-width: 640px){
+    width: 30%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
 `;
 
 const Titulo = styled.div`
   width: 100%;
-  height: 30%;
-  padding: 0 98px;
+  height: 8vh;
+  padding: 0 98px 10px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -160,13 +206,21 @@ const Titulo = styled.div`
   font-family: Helvetica;
   font-weight: bold;
   @media(max-width: 640px){
-    width: 100%;
-    height: 10%;
-    padding: 0 28px;
-    display: flex;
-    justify-content: flex-start;
-    font-size: 20px;
+    display: none;
   }
+`;
+
+const TituloMobile = styled.div`
+  display: none;
+  @media(max-width: 640px){
+    display: flex;
+    font-size: 20px;
+    color: #fff;
+    font-family: Helvetica;
+    font-weight: bold;
+    
+  }
+
 `;
 
 const ContainerTabela = styled.div`
@@ -235,6 +289,50 @@ const HeaderTable = styled.div`
   align-items: center;
 `;
 
+const HeaderTableTema = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const HeaderTableEntrada = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const HeaderTableSaida = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const HeaderTablePendencias = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
 const ContainerTabelaConteudo = styled.div` 
   width: 100%;
   height: 100%;
@@ -245,6 +343,7 @@ const ContainerTabelaConteudo = styled.div`
   font-family: Helvetica;
   border: #fff solid 1px;
   overflow-y: scroll;
+  /* white-space: nowrap; */
   background-color: #fff;
   @media(max-width: 640px){
     width: 100%;
@@ -265,14 +364,6 @@ const MensageIcon = styled.img`
   width: 80%;
   height: 64%;
 
-`;
-
-const A = styled.a`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  text-decoration:none; 
 `;
 
 
@@ -341,39 +432,54 @@ class Admin extends Component {
         </section>
         <Section>
           <Solicitacoes>
-            <SolicitacoesConteudo>
+            <SolicitacoesContainer>
               <Titulo>Novas solicitações:</Titulo>
-              <ContainerSolicitacoesItens>
-                <SolicitacoesItens>
-                  <ImagesSolicitacoes src="./rg.png" />
-                  <A href="/Documents"><ButtonDocumentos>Documentos</ButtonDocumentos></A>
-                </SolicitacoesItens>
-                <SolicitacoesItens>
-                  <ImagesSolicitacoes src="./emprego.png" />
-                  <A href="/Jobs"><ButtonEmprego>Emprego</ButtonEmprego></A>
-                </SolicitacoesItens>
-                <SolicitacoesItens>
-                  <ImagesSolicitacoes src="negocios.png" />
-                  <A href="/Business"><ButtonNegocios>Negócios</ButtonNegocios></A>
-                </SolicitacoesItens>
-              </ContainerSolicitacoesItens>
-            </SolicitacoesConteudo>
+              <ContainerSolicitacoesConteudo>
+                <ContainerSolicitacoesItens>
+                  <SolicitacoesItens>
+                    <SolicitacoesItensIMG>
+                      <ImagesSolicitacoes src="./rg.png" />
+                    </SolicitacoesItensIMG>
+                    <SolicitacoesItensLink>
+                      <A href="/Documents"><ButtonDocumentos>Documentos</ButtonDocumentos></A>
+                    </SolicitacoesItensLink>
+                  </SolicitacoesItens>
+                  <SolicitacoesItens>
+                    <SolicitacoesItensIMG>
+                      <ImagesSolicitacoes src="./emprego.png" />
+                    </SolicitacoesItensIMG>
+                    <SolicitacoesItensLink>
+                      <A href="/Jobs"><ButtonEmprego>Emprego</ButtonEmprego></A>
+                    </SolicitacoesItensLink>
+                  </SolicitacoesItens>
+                  <SolicitacoesItens>
+                    <SolicitacoesItensIMG>
+                      <ImagesSolicitacoes src="negocios.png" />
+                    </SolicitacoesItensIMG>
+                    <SolicitacoesItensLink>
+                      <A href="/Business"><ButtonNegocios>Negócios</ButtonNegocios></A>
+                    </SolicitacoesItensLink>
+                  </SolicitacoesItens>
+                </ContainerSolicitacoesItens>
+              </ContainerSolicitacoesConteudo>
+            </SolicitacoesContainer>
           </Solicitacoes>
           <ContainerPrincipal>
             <ContainerPrincipalConteudo>
               <CabecalhoFinalizados>
                 <Titulo>Processos finalizados:</Titulo>
+                <TituloMobile>Pedidos:</TituloMobile>
               </CabecalhoFinalizados>
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Tema</HeaderTable>
+                    <HeaderTableTema>Tema</HeaderTableTema> 
                     <HeaderTable>Categoria</HeaderTable>
                     <HeaderTable>Tipo</HeaderTable>
                     <HeaderTable>Cliente</HeaderTable>
-                    <HeaderTable>Entrada</HeaderTable>
-                    <HeaderTable>Saida</HeaderTable>
-                    <HeaderTable>Pendências</HeaderTable>
+                    <HeaderTableEntrada>Entrada</HeaderTableEntrada> 
+                    <HeaderTableSaida>Saida</HeaderTableSaida> 
+                    <HeaderTablePendencias>Pendências</HeaderTablePendencias> 
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>
                 </ContainerTabelaCabecalho>

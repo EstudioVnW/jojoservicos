@@ -38,7 +38,7 @@ const ContainerTopo = styled.div`
 const ContainerTopoDocumento = styled.div`
   width: 20%;
   height: 100%;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 4%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -93,6 +93,7 @@ const Section = styled.section`
 const Solicitacoes = styled.div`
   width: 100%;
   height: 90%;
+  padding: 20px 0 0 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -116,6 +117,7 @@ const SolicitacoesConteudo = styled.div`
 const ContainerPrincipal = styled.div`
   width: 100%;
   height: 100%;
+  padding: 20px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,6 +236,7 @@ const ContainerTabelaConteudo = styled.div`
   border: #fff solid 1px;
   overflow-y: scroll;
   background-color: #fff;
+  white-space: nowrap;
   @media(max-width: 640px){
     width: 100%;
     height: 100vh;
@@ -300,7 +303,7 @@ class Documents extends Component {
         {  'status': 'Finalizado', 
           'cliente': 'Gabriel Freitas', 
           'telefone': '95479-9099', 
-          'email': 'gabrielfreitas@gmail.com',
+          'email': 'gabrielfreitas@gmail...',
           'categoria': 'Alistamento',
           'tipo': '2ª via',
           'justificativa': 'Perda',
@@ -326,12 +329,12 @@ class Documents extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Status</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Status ▼</HeaderTable>
+                    <HeaderTable>Cliente ▼</HeaderTable>
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
-                    <HeaderTable>Categoria</HeaderTable>
-                    <HeaderTable>Tipo</HeaderTable>
+                    <HeaderTable>Categoria ▼</HeaderTable>
+                    <HeaderTable>Tipo ▼</HeaderTable>
                     <HeaderTable>Justificativa</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>
@@ -365,12 +368,12 @@ class Documents extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Status</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Status ▼</HeaderTable>
+                    <HeaderTable>Cliente ▼</HeaderTable>
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
-                    <HeaderTable>Categoria</HeaderTable>
-                    <HeaderTable>Tipo</HeaderTable>
+                    <HeaderTable>Categoria ▼</HeaderTable>
+                    <HeaderTable>Tipo ▼</HeaderTable>
                     <HeaderTable>Justificativa</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>

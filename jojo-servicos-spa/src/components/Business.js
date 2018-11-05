@@ -35,16 +35,16 @@ const ContainerTopo = styled.div`
 }
 `;
 
-const ContainerTopoDocumento = styled.div`
+const ContainerTopoNegocios = styled.div`
   width: 20%;
   height: 100%;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 3.6%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 `;
 
-const ImageTopoLogoDocumento = styled.img` 
+const ImageTopoLogoNegocios = styled.img` 
   width: 20%;
   height: 50%;
   padding-right: 2%;
@@ -54,7 +54,7 @@ const ImageTopoLogoDocumento = styled.img`
 	}
 `;
 
-const ParagrafoTopoDocumento = styled.div`
+const ParagrafoTopoNegocios = styled.div`
   color: #69B42E;
   font-size: 28px;
   font-family: Helvetica;
@@ -92,6 +92,7 @@ const Section = styled.section`
 const Solicitacoes = styled.div`
   width: 100%;
   height: 90%;
+  padding: 20px 0 0 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -115,6 +116,7 @@ const SolicitacoesConteudo = styled.div`
 const ContainerPrincipal = styled.div`
   width: 100%;
   height: 100%;
+  padding: 20px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -216,6 +218,7 @@ const ContainerTabelaConteudo = styled.div`
   font-family: Helvetica;
   border: #fff solid 1px;
   overflow-y: scroll;
+  white-space: nowrap;
   background-color: #fff;
   @media(max-width: 640px){
     width: 100%;
@@ -236,17 +239,6 @@ const MensageIcon = styled.img`
   width: 80%;
   height: 64%;
 `;
-
-const ComEnvioIcon = styled.img`
-  width: 80%;
-  height: 64%;
-`;
-
-const SemEnvioIcon = styled.img`
-  width: 80%;
-  height: 64%;
-`;
-
 
 
 class Business extends Component {
@@ -303,10 +295,10 @@ class Business extends Component {
       <Container>
         <ContainerTopo>
           <ImageTopoLogoJojo src="./logo-jojo.svg" alt="logo Jojô" />
-          <ContainerTopoDocumento>
-            <ParagrafoTopoDocumento>Negócios</ParagrafoTopoDocumento>
-            <ImageTopoLogoDocumento src="./negocios.png" alt="logo negócios" />
-          </ContainerTopoDocumento>
+          <ContainerTopoNegocios>
+            <ParagrafoTopoNegocios>Negócios</ParagrafoTopoNegocios>
+            <ImageTopoLogoNegocios src="./negocios.png" alt="logo negócios" />
+          </ContainerTopoNegocios>
         </ContainerTopo>
         <Section>
           <Solicitacoes>
@@ -315,11 +307,11 @@ class Business extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Status</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Status ▼</HeaderTable>
+                    <HeaderTable>Cliente ▼</HeaderTable>
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
-                    <HeaderTable>Categoria</HeaderTable>
+                    <HeaderTable>Categoria ▼</HeaderTable>
                     <HeaderTable>Área</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>
@@ -352,11 +344,11 @@ class Business extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Status</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Status ▼</HeaderTable>
+                    <HeaderTable>Cliente ▼</HeaderTable>
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
-                    <HeaderTable>Categoria</HeaderTable>
+                    <HeaderTable>Categoria ▼</HeaderTable>
                     <HeaderTable>Área</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>

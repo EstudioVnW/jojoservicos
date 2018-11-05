@@ -35,16 +35,16 @@ const ContainerTopo = styled.div`
 }
 `;
 
-const ContainerTopoDocumento = styled.div`
+const ContainerTopoEmpregos = styled.div`
   width: 20%;
   height: 100%;
-  margin: 0 0 0 50px;
+  margin: 0 0 0 3.6%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 `;
 
-const ImageTopoLogoDocumento = styled.img` 
+const ImageTopoLogoEmpregos = styled.img` 
   width: 20%;
   height: 50%;
   padding-right: 2%;
@@ -54,7 +54,7 @@ const ImageTopoLogoDocumento = styled.img`
 	}
 `;
 
-const ParagrafoTopoDocumento = styled.div`
+const ParagrafoTopoEmpregos = styled.div`
   color: #83219A;
   font-size: 28px;
   font-family: Helvetica;
@@ -92,6 +92,7 @@ const Section = styled.section`
 const Solicitacoes = styled.div`
   width: 100%;
   height: 90%;
+  padding: 20px 0 0 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -115,6 +116,7 @@ const SolicitacoesConteudo = styled.div`
 const ContainerPrincipal = styled.div`
   width: 100%;
   height: 100%;
+  padding: 20px 0 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -222,6 +224,7 @@ const ContainerTabelaConteudo = styled.div`
   font-family: Helvetica;
   border: #fff solid 1px;
   overflow-y: scroll;
+  /* white-space: nowrap; */
   background-color: #fff;
   @media(max-width: 640px){
     width: 100%;
@@ -244,13 +247,11 @@ const MensageIcon = styled.img`
 `;
 
 const ComEnvioIcon = styled.img`
-  width: 80%;
-  height: 64%;
+  width: 10%;
 `;
 
 const SemEnvioIcon = styled.img`
-  width: 80%;
-  height: 64%;
+  width: 10%;
 `;
 
 
@@ -265,7 +266,7 @@ class Jobs extends Component {
             'telefone': '91239-9999', 
             'email': 'pedrosilva@gmail.com',
             'categoria': 'Jovem Aprendiz',
-            'curriculo': <ComEnvioIcon src="./.svg" alt="Com Envio" />,
+            'curriculo': <ComEnvioIcon src="./ComEnvioIcon.svg" alt="Com Envio" />,
             'envio': 'Com envio',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
@@ -274,7 +275,7 @@ class Jobs extends Component {
             'telefone': '99321-9456', 
             'email': 'jaquerodrigues@gmail...',
             'categoria': 'Emprego Formal',
-            'curriculo': <SemEnvioIcon src="./.svg" alt="Sem Envio" />,
+            'curriculo': <SemEnvioIcon src="./SemEnvioIcon.svg" alt="Sem Envio" />,
             'envio': 'Sem Envio',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
@@ -283,7 +284,7 @@ class Jobs extends Component {
           'telefone': '91029-5299', 
           'email': 'igormelo@gmail.com',
           'categoria': 'Emprego Formal',
-          'curriculo': <ComEnvioIcon src="./.svg" alt="Com Envio" />,
+          'curriculo': <ComEnvioIcon src="./ComEnvioIcon.svg" alt="Com Envio" />,
           'envio': 'Com Envio',
           'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
@@ -292,7 +293,7 @@ class Jobs extends Component {
           'telefone': '99965-7165', 
           'email': 'marieugenia@gmail..',
           'categoria': 'Jovem Aprendiz',
-          'curriculo': <ComEnvioIcon src="./.svg" alt="Com Envio" />,
+          'curriculo': <ComEnvioIcon src="./ComEnvioIcon.svg" alt="Com Envio" />,
           'envio': 'Com Envio',
           'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
@@ -301,7 +302,7 @@ class Jobs extends Component {
           'telefone': '95479-9099', 
           'email': 'gabrielfreitas@gmail.com',
           'categoria': 'Emprego Formal',
-          'curriculo': <SemEnvioIcon src="./.svg" alt="Sem envio" />,
+          'curriculo': <SemEnvioIcon src="./SemEnvioIcon.svg" alt="Sem envio" />,
           'envio': 'Sem Envio',
           'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         }
@@ -313,10 +314,10 @@ class Jobs extends Component {
       <Container>
         <ContainerTopo>
           <ImageTopoLogoJojo src="./logo-jojo.svg" alt="logo Jojô" />
-          <ContainerTopoDocumento>
-            <ParagrafoTopoDocumento>Empregos</ParagrafoTopoDocumento>
-            <ImageTopoLogoDocumento src="./emprego.png" alt="logo emprego" />
-          </ContainerTopoDocumento>
+          <ContainerTopoEmpregos>
+            <ParagrafoTopoEmpregos>Empregos</ParagrafoTopoEmpregos>
+            <ImageTopoLogoEmpregos src="./emprego.png" alt="logo emprego" />
+          </ContainerTopoEmpregos>
         </ContainerTopo>
         <Section>
           <Solicitacoes>
@@ -325,11 +326,11 @@ class Jobs extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Status</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Status ▼</HeaderTable>
+                    <HeaderTable>Cliente ▼</HeaderTable>
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
-                    <HeaderTable>Categoria</HeaderTable>
+                    <HeaderTable>Categoria ▼</HeaderTable>
                     <HeaderTable>Currículo</HeaderTable>
                     <HeaderTable>Envio</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
@@ -364,11 +365,11 @@ class Jobs extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
-                    <HeaderTable>Status</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Status ▼</HeaderTable>
+                    <HeaderTable>Cliente ▼</HeaderTable>
                     <HeaderTable>Telefone</HeaderTable>
                     <HeaderTable>E-mail</HeaderTable>
-                    <HeaderTable>Categoria</HeaderTable>
+                    <HeaderTable>Categoria ▼</HeaderTable>
                     <HeaderTable>Currículo</HeaderTable>
                     <HeaderTable>Envio</HeaderTable>
                     <HeaderTable>Mensagens</HeaderTable>
