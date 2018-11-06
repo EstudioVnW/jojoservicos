@@ -15,6 +15,7 @@ const Container = styled.div`
   border-bottom: 0.5px solid #707070;
   @media(max-width: 640px){
     width: 100%;
+    height: 37%;
     display: flex;
   }
 `;

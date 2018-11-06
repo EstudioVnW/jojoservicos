@@ -84,6 +84,7 @@ const ContainerInput = styled.div`
   flex-direction: column;
   @media(max-width: 640px){
     width: 100%;
+    height: 35%;
   }
 `;
 
@@ -117,6 +118,7 @@ const ContainerEntrar = styled.div`
   @media(max-width: 640px){
     /* width: 320px; */
     width: 100%;
+    height: 10%;
   }
 `;
 
@@ -130,6 +132,10 @@ const ContainerEntrarItems = styled.div`
     height: 15%;
     align-self: flex-end;
   }
+`;
+
+const A = styled.a`
+  text-decoration: none;
 `;
 
 const ButtonEntrar = styled.button`
@@ -163,7 +169,7 @@ const Login= () =>
           </ContainerInput>
           <ContainerEntrar>
             <ContainerEntrarItems>
-              <a href=" ">Esqueceu a senha?</a>
+              <A href=" ">Esqueceu a senha?</A>
               <ButtonEntrar>Entrar</ButtonEntrar>
             </ContainerEntrarItems>
           </ContainerEntrar>

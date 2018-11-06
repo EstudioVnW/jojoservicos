@@ -358,6 +358,24 @@ const Row = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  @media(max-width: 640px){
+    width: 100%;
+    height: 35%;
+  }
+`;
+
+const RowVariation = styled.div`
+  margin: 0;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-basis: 200px;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-start;
+  @media(max-width: 640px){
+    display: none;
+  }
 `;
 
 const MensageIcon = styled.img`
@@ -488,13 +506,21 @@ class Admin extends Component {
                     this.state.pedidos.map(item => {
                       return (
                         <Row>
-                          <CelTable value={item['tema']} />
+                          <RowVariation>
+                            <CelTable value={item['tema']} />
+                          </RowVariation>
                           <CelTable value={item['categoria']} />
                           <CelTable value={item['tipo']} />
                           <CelTable value={item['cliente']} />
-                          <CelTable value={item['entrada']} />
-                          <CelTable value={item['saida']} />
-                          <CelTable value={item['pendencias']} />
+                          <RowVariation>
+                            <CelTable value={item['entrada']} />
+                          </RowVariation>
+                          <RowVariation>
+                            <CelTable value={item['saida']} />
+                          </RowVariation>
+                          <RowVariation>
+                            <CelTable value={item['pendencias']} />
+                          </RowVariation>
                           <CelTable value={item['mensagem']} />
                         </Row>
                       )
