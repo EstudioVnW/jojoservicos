@@ -186,11 +186,11 @@ const CabecalhoFinalizados = styled.div`
   display: flex;
   align-items: center;
   @media(max-width: 640px){
-    width: 30%;
+    width: 37%;
     height: 20%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
 `;
 
