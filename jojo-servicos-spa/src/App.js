@@ -135,7 +135,7 @@ class App extends Component {
           <div className="caixa_inicial--mobile">
             <div className="caixa_inicial-indicacao-mobile " onClick={this.open}>
               <img className="imgdeCompartilhar" src="share.png" alt="compartilhar" />
-              <p>Indique para um amigo</p>
+              <p>Indique para um amigo </p>
             </div>
             { this.state.compartilhar === true &&
               <div className="caixa_inicial--compartilhar--mobile">

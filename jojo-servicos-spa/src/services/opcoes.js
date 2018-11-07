@@ -47,6 +47,18 @@ opcoes['exibir-opcoes-identidade-qual-via'].push(
   }
 );
 
+opcoes['exibir-opcoes-titulo-qual-via'] = [];
+opcoes['exibir-opcoes-titulo-qual-via'].push(
+  {
+    label: 'Primeira Via',
+    evento: 'agendar-titulo-primeira-via'
+  },
+  {
+    label: 'Segunda Via',
+    evento: 'agendar-titulo-segunda-via'
+  }
+);
+
 opcoes['exibir-opcoes-ident-seg-via-motivos'] = [];
 opcoes['exibir-opcoes-ident-seg-via-motivos'].push(
   {
@@ -79,6 +91,30 @@ opcoes['exibir-opcoes-ctps-qual-via'].push(
   }
 );
 
+opcoes['exibir-opcoes-ctps-voce-tem-mais-que-14-anos'] = [];
+opcoes['exibir-opcoes-ctps-voce-tem-mais-que-14-anos'].push(
+  {
+    label: 'Sim',
+    evento: 'maior-de-14'
+  },
+  {
+    label: 'Não',
+    evento: 'menor-de-14'
+  }
+);
+
+opcoes['exibir-opcoes-ctps-seg-via-motivos'] = [];
+opcoes['exibir-opcoes-ctps-seg-via-motivos'].push(
+  {
+    label: 'Perda roubo extravio furto',
+    evento: 'ctps-segunda-via-perda-ou-dano'
+  },
+  {
+    label:'Carteira danificada ou sem espaco pra anotacoes',
+    evento:'ctps-segunda-via-danificada-ou-sem-espaco'
+  }
+);
+
 opcoes['exibir-opcoes-titulo-qual-via'] = [];
 opcoes['exibir-opcoes-titulo-qual-via'].push(
   {
@@ -88,6 +124,18 @@ opcoes['exibir-opcoes-titulo-qual-via'].push(
   {
     label: 'Segunda Via',
     evento: 'agendar-titulo-segunda-via'
+  }
+);
+
+opcoes['exibir-opcoes-titulo-segunda-via-motivo'] = [];
+opcoes['exibir-opcoes-titulo-segunda-via-motivo'].push(
+  {
+    label: 'Perda',
+    evento: 'agendar-titulo-segunda-via-motivo-perda'
+  },
+  {
+    label: 'Roubo',
+    evento: 'agendar-titulo-segunda-via-motivo-roubo'
   }
 );
 
@@ -169,6 +217,30 @@ opcoes['exibir-opcoes-completou-ensino-medio'].push(
   {
     label: 'Não',
     evento: 'completou-ensino-medio-nao'
+  }
+);
+
+opcoes['exibir-opcoes-possui-curriculo'] = [];
+opcoes['exibir-opcoes-possui-curriculo'].push(
+  {
+    label: 'Sim',
+    evento: 'possui-curriculo-sim'
+  },
+  {
+    label: 'Não',
+    evento: 'possui-curriculo-nao'
+  }
+);
+
+opcoes['exibir-opcoes-deseja-ser-jovem-aprendiz'] = [];
+opcoes['exibir-opcoes-deseja-ser-jovem-aprendiz'].push(
+  {
+    label: 'Sim',
+    evento: 'deseja-ser-jovem-aprendiz-sim'
+  },
+  {
+    label: 'Não',
+    evento: 'deseja-ser-jovem-aprendiz-nao'
   }
 );
 
