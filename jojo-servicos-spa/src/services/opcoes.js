@@ -91,6 +91,30 @@ opcoes['exibir-opcoes-ctps-qual-via'].push(
   }
 );
 
+opcoes['exibir-opcoes-ctps-voce-tem-mais-que-14-anos'] = [];
+opcoes['exibir-opcoes-ctps-voce-tem-mais-que-14-anos'].push(
+  {
+    label: 'Sim',
+    evento: 'maior-de-14'
+  },
+  {
+    label: 'Não',
+    evento: 'menor-de-14'
+  }
+);
+
+opcoes['exibir-opcoes-ctps-seg-via-motivos'] = [];
+opcoes['exibir-opcoes-ctps-seg-via-motivos'].push(
+  {
+    label: 'Perda roubo extravio furto',
+    evento: 'ctps-segunda-via-perda-ou-dano'
+  },
+  {
+    label:'Carteira danificada ou sem espaco pra anotacoes',
+    evento:'ctps-segunda-via-danificada-ou-sem-espaco'
+  }
+);
+
 opcoes['exibir-opcoes-titulo-qual-via'] = [];
 opcoes['exibir-opcoes-titulo-qual-via'].push(
   {

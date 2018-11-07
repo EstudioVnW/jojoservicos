@@ -4,13 +4,14 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   margin: 0;
+  width: 100%;
   height: 40px;
   padding: 0 6px;
   display: flex;
-  flex-basis:200px;
+  flex-basis: 200px;
   flex-grow: 1;
   align-items: center;
-  justify-content: left;
+  justify-content: flex-start;
   border-bottom: 0.5px solid #707070;
   @media(max-width: 640px){
     width: 100%;
@@ -32,7 +33,7 @@ const Value = styled.p`
 
 const CelTable = (props) =>
   <Container>
-      <Value>{props.value || 'null'}</Value>
+    <Value>{props.value || 'null'}</Value>
   </Container>
 
 export default CelTable;
