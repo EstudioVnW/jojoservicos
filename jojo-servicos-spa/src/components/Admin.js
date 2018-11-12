@@ -322,17 +322,6 @@ const HeaderTableSaida = styled.div`
   }
 `;
 
-const HeaderTablePendencias = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media(max-width: 640px){
-    display: none;
-  }
-`;
-
 const ContainerTabelaConteudo = styled.div` 
   width: 100%;
   height: 100%;
@@ -391,50 +380,51 @@ class Admin extends Component {
     super(props);
     this.state = {
       pedidos: [
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
+        {   'cliente': 'Pedro',
+            'telefone': '91239-9999',
+            'email': 'pedrosilva@gmail.com', 
+            'tema': 'Documento', 
+            'categoria': 'Carteira de trabalho', 
             'entrada': '11/09/2018',
             'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
+        {  'cliente': 'Pedro',
+            'telefone': '99321-9456',
+            'email': 'pedrosilva@gmail.com', 
+            'tema': 'Documento', 
+            'categoria': 'Carteira de trabalho', 
             'entrada': '11/09/2018',
             'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
             'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
-            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        {  'cliente': 'Pedro',
+          'telefone': '91029-5299',
+          'email': 'pedrosilva@gmail.com', 
+          'tema': 'Documento', 
+          'categoria': 'Carteira de trabalho', 
+          'entrada': '11/09/2018',
+          'saida': '11/09/2018',
+          'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
-            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        {  'cliente': 'Pedro',
+          'telefone': '99965-7165',
+          'email': 'pedrosilva@gmail.com', 
+          'tema': 'Documento', 
+          'categoria': 'Carteira de trabalho', 
+          'entrada': '11/09/2018',
+          'saida': '11/09/2018',
+          'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         },
-        {  'tema': 'Documento', 
-           'categoria': '2ª via', 
-            'tipo': 'Identidade', 
-            'cliente': 'Pedro',
-            'entrada': '11/09/2018',
-            'saida': '11/09/2018',
-            'pendencias': 'Certidão de Nasc., Duda...',
-            'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
+        {  
+          'cliente': 'Pedro',
+          'telefone': '95479-9099',
+          'email': 'pedrosilva@gmail.com', 
+          'tema': 'Documento', 
+          'categoria': 'Carteira de trabalho', 
+          'entrada': '11/09/2018',
+          'saida': '11/09/2018',
+          'mensagem': <MensageIcon src="./mensage.svg" alt="Mensagem" />
         }
       ]
     };
@@ -491,13 +481,13 @@ class Admin extends Component {
               <ContainerTabela>
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
+                    <HeaderTable>Cliente</HeaderTable>
+                    <HeaderTable>Telefone</HeaderTable>
+                    <HeaderTable>E-mail</HeaderTable>
                     <HeaderTableTema>Tema</HeaderTableTema> 
                     <HeaderTable>Categoria</HeaderTable>
-                    <HeaderTable>Tipo</HeaderTable>
-                    <HeaderTable>Cliente</HeaderTable>
                     <HeaderTableEntrada>Entrada</HeaderTableEntrada> 
                     <HeaderTableSaida>Saida</HeaderTableSaida> 
-                    <HeaderTablePendencias>Pendências</HeaderTablePendencias> 
                     <HeaderTable>Mensagens</HeaderTable>
                   </ContainerTabelaCabecalhoItems>
                 </ContainerTabelaCabecalho>
@@ -506,20 +496,18 @@ class Admin extends Component {
                     this.state.pedidos.map(item => {
                       return (
                         <Row>
+                          <CelTable value={item['cliente']} />
+                          <CelTable value={item['telefone']} />
+                          <CelTable value={item['email']} />
                           <RowVariation>
                             <CelTable value={item['tema']} />
                           </RowVariation>
                           <CelTable value={item['categoria']} />
-                          <CelTable value={item['tipo']} />
-                          <CelTable value={item['cliente']} />
                           <RowVariation>
                             <CelTable value={item['entrada']} />
                           </RowVariation>
                           <RowVariation>
                             <CelTable value={item['saida']} />
-                          </RowVariation>
-                          <RowVariation>
-                            <CelTable value={item['pendencias']} />
                           </RowVariation>
                           <CelTable value={item['mensagem']} />
                         </Row>

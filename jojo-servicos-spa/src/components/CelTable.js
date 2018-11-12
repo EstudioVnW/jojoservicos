@@ -29,6 +29,7 @@ const Value = styled.p`
   align-items: center;
   font-size: 14px;
   font-family: Helvetica;
+  white-space: nowrap; 
   @media(max-width: 640px){
     /* width: 100%;
     display: flex; */
