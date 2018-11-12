@@ -17,7 +17,6 @@ class SenderBox extends Component{
   }
   _handleKeyPress = (e) => {
     if (e.key === 'Enter') {
-      console.log('do validate');
       this.props.funcaoEnviar(this.state.text);
       this.setState({text: ''});
     }

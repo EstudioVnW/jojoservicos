@@ -15,10 +15,9 @@ import Conversacao from './components/Conversacao';
 class App extends Component {
   constructor(props){
     super(props);
-    console.log('opcoes', opcoes['exibir-opcoes-secao']);
     this.dialogRef = React.createRef();
     this.state = { 
-      parameters: {},
+      indexPedido: 0,
       compartilhar:false,
       mensagens: [
         {
@@ -26,62 +25,100 @@ class App extends Component {
           text: "Estou online",
           textId: 1
         }
-      ]
-      
+      ],
+      atendimentos:[{
+        parameters: {}
+      }]
     };
     this.sendEventUsr = this.sendEventUsr.bind(this);
     this.enviarMensagemUsr = this.enviarMensagemUsr.bind(this);
     this.scrollToBottom = this.scrollToBottom.bind(this);
   }
   sendEventUsr(text){
-    console.log('event123');
+    console.log(' ');
+    console.log('evento->', text);
     sendEvent.sendEvent(text, this.props.sessionId)
     .then(res => {
-      console.log('res', res);
+      console.log('resposta do evento->', res.data.result.resolvedQuery);
+      console.log('indexPedido->', this.state.indexPedido);
+      console.log('atendimentos->', this.state.atendimentos);
+      console.log('action->', res.data.result.action);
+      console.log('atendimento corrente->', this.state.atendimentos[this.state.indexPedido]);
+
+      let { 
+        fulfillment, 
+        parameters, 
+        action,
+        resolvedQuery
+      } = res.data.result;
+      
       let novasMensagens;
-      let { fulfillment, parameters, action } = res.data.result;
+      novasMensagens = fulfillment.messages.map(
+        (item, index) => {
+          return {
+            text: item.speech, 
+            textId: new Date().getTime() + '+' + index, 
+            emissor: "bot" 
+          }
+      });
+
+      if(opcoes[action]){
+        novasMensagens.push(
+          {
+            opcoes: opcoes[action], 
+            textId: new Date().getTime(), 
+            emissor:"bot"
+          });
+      }
+
+      let newMensagens = [...this.state.mensagens, ...novasMensagens];
+
+      if( action === 'exibir-opcoes-secao' ) {
+        let atendimento = this.state.atendimentos;
+        atendimento.push({ parameters: { } });
+        this.setState({
+          indexPedido: this.state.indexPedido + 1,
+          atendimentos: atendimento,
+          mensagens: newMensagens
+        });
+      }else{
+        let newState = {
+          parameters: {...this.state.atendimentos[this.state.indexPedido].parameters, ...parameters, ...{ atualizacao: new Date().toString()}}
+        };
+        
+        let atendimentos = this.state.atendimentos;
+        atendimentos[this.state.indexPedido] =  newState;
+
+        this.setState({ 
+          atendimentos: atendimentos,
+          mensagens: newMensagens
+        });
+        
+        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), atendimentos);
+      }
+    });
+  }
+
+  enviarMensagemUsr(text){
+    sendUserSays.sendUserSays(text, this.props.sessionId)
+    .then(res => {
+      let novasMensagens;
+      let { 
+        fulfillment, 
+        parameters, 
+        action 
+      } = res.data.result;
       
       novasMensagens = fulfillment.messages.map(
         (item, index) => {
           return {
             text: item.speech, 
             textId: new Date().getTime() + '+' + index, 
-            emissor:"bot" }
-      });
-      if(opcoes[action]){
-        novasMensagens.push(
-          {
-            opcoes: opcoes[action], 
-            textId: new Date().getTime(), 
-            emissor:"bot"
-          });
-      }
-      let newState = {
-        parameters: {...this.state.parameters, ...parameters, ...{ atualizacao: new Date().toString()}},
-        mensagens: [...this.state.mensagens, ...novasMensagens]
-      };
-      this.setState( newState );
-      //console.log(newState);
-      //databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), {...this.state.parameters, ...newState.parameters });
-    });
-  }
+            emissor:"bot" 
+          }
+        });
 
-  enviarMensagemUsr(text){
-    //console.log('doc', this.props.doc.pegarIdDoc());
-    sendUserSays.sendUserSays(text, this.props.sessionId)
-    .then(res => {
-      let novasMensagens;
-      let { fulfillment, parameters, action } = res.data.result;
-      
-      novasMensagens = fulfillment.messages.map(
-        (item, index) => {
-          return {
-          text: item.speech, 
-          textId: new Date().getTime() + '+' + index, 
-          emissor:"bot" }
-      });
       if(opcoes[action]){
-        console.log('action', action);
         novasMensagens.push(
           {
             opcoes: opcoes[action], 
@@ -89,20 +126,27 @@ class App extends Component {
             emissor:"bot"
           });
       }
+
       let newState = {
-        parameters: {...this.state.parameters, ...parameters, ...{ atualizacao: new Date().toString()}},
-        mensagens: [...this.state.mensagens, ...novasMensagens]
+        parameters: {...this.state.atendimentos[this.state.indexPedido].parameters, ...parameters, ...{ atualizacao: new Date().toString()}}
       };
-      this.setState( newState );
-      //console.log(newState);
-      databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), {...this.state.parameters, ...newState.parameters });
+
+      let newMensagens = [...this.state.mensagens, ...novasMensagens];
+      let atendimentos = [];
+      atendimentos.push(newState);
+      this.setState({ 
+        atendimentos: atendimentos,
+        mensagens: newMensagens
+      });
+      databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), atendimentos);
     });
     
-    this.setState(
-      {
-        mensagens: [...this.state.mensagens, {text: text, textId: new Date().getTime(), emissor:"usuario"}]
-      }
-    );
+    this.setState({
+      mensagens: [...this.state.mensagens, {text: text, textId: new Date().getTime(), emissor:"usuario"}],
+      atendimentos: [{
+        parameters: this.state.atendimentos[this.state.indexPedido].parameters
+      }]
+    });
   }
   open = () => {
     this.setState({

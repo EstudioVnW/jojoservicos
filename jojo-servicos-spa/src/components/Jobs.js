@@ -5,7 +5,6 @@ import Footer from './Footer';
 import CelTable from './CelTable';
 
 import styled from 'styled-components';
-import { style } from 'glamor';
 
 const Container = styled.div`
   width: 100%;
