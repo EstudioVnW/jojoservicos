@@ -48,8 +48,7 @@ class App extends Component {
       let { 
         fulfillment, 
         parameters, 
-        action,
-        resolvedQuery
+        action
       } = res.data.result;
       
       let novasMensagens;

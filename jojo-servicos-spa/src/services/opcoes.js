@@ -232,6 +232,18 @@ opcoes['exibir-opcoes-possui-curriculo'].push(
   }
 );
 
+opcoes['exibir-opcoes-quem-envia-curriculo'] = [];
+opcoes['exibir-opcoes-quem-envia-curriculo'].push(
+  {
+    label: 'Eu envio',
+    evento: 'usuario-envia-curriculo'
+  },
+  {
+    label: 'Jojo envia',
+    evento: 'jojo-envia-curriculo'
+  }
+);
+
 opcoes['exibir-opcoes-deseja-ser-jovem-aprendiz'] = [];
 opcoes['exibir-opcoes-deseja-ser-jovem-aprendiz'].push(
   {
