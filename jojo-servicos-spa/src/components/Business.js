@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Footer from './Footer';
-
 import CelTable from './CelTable';
 
 import styled from 'styled-components';
@@ -31,13 +30,12 @@ const ContainerTopo = styled.div`
     display: flex;
     justify-content: center;
 	}
-}
 `;
 
 const ContainerTopoNegocios = styled.div`
   width: 20%;
   height: 100%;
-  margin: 0 0 0 3.6%;
+  margin: 0 0 0 3.5%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -69,7 +67,6 @@ const ImageTopoLogoJojo = styled.img`
 		margin: 0 0 0 5%;
 	}
 `;
-
 
 const Section = styled.section`
   width: 100%;
@@ -293,10 +290,10 @@ class Business extends Component {
     return (
       <Container>
         <ContainerTopo>
-          <ImageTopoLogoJojo src="./logo-jojo.svg" alt="logo Jojô" />
+          <ImageTopoLogoJojo src="./logo-jojo.svg" alt="Logo Jojô" />
           <ContainerTopoNegocios>
             <ParagrafoTopoNegocios>Negócios</ParagrafoTopoNegocios>
-            <ImageTopoLogoNegocios src="./negocios.png" alt="logo negócios" />
+            <ImageTopoLogoNegocios src="./negocios.png" alt="Logo Negócios" />
           </ContainerTopoNegocios>
         </ContainerTopo>
         <Section>

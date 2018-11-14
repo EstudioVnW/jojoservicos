@@ -8,10 +8,10 @@ const Container = styled.div`
   height: 40px;
   /* padding: 0 6px; */
   display: flex;
+  justify-content: flex-start;
+  align-items: center;
   flex-basis: 200px;
   flex-grow: 1;
-  align-items: center;
-  justify-content: flex-start;
   border-bottom: 0.5px solid #707070;
   @media(max-width: 640px){
     width: 100%;
@@ -31,8 +31,8 @@ const Value = styled.p`
   font-family: Helvetica;
   white-space: nowrap; 
   @media(max-width: 640px){
-    /* width: 100%;
-    display: flex; */
+    /* width: 100%;*/
+    display: flex; 
     font-size: 10px;
     white-space: nowrap;
   }

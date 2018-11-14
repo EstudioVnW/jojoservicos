@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Footer from './Footer';
-
 import CelTable from './CelTable';
 
 import styled from 'styled-components';
@@ -31,13 +30,13 @@ const ContainerTopo = styled.div`
     display: flex;
     justify-content: center;
 	}
-}
+
 `;
 
 const ContainerTopoEmpregos = styled.div`
   width: 20%;
   height: 100%;
-  margin: 0 0 0 3.6%;
+  margin: 0 0 0 3.5%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -69,7 +68,6 @@ const ImageTopoLogoJojo = styled.img`
 		margin: 0 0 0 5%;
 	}
 `;
-
 
 const Section = styled.section`
   width: 100%;
@@ -166,12 +164,6 @@ const ContainerTabela = styled.div`
   background-color: #fff; 
   border: #fff solid 1px;
   border-radius: 5px;
-  /* width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5px; */
   @media(max-width: 640px){
     width: 85%;
     height: 100%;
@@ -254,7 +246,6 @@ const SemEnvioIcon = styled.img`
 `;
 
 
-
 class Jobs extends Component {
   constructor(props){
     super(props);
@@ -312,10 +303,10 @@ class Jobs extends Component {
     return (
       <Container>
         <ContainerTopo>
-          <ImageTopoLogoJojo src="./logo-jojo.svg" alt="logo Jojô" />
+          <ImageTopoLogoJojo src="./logo-jojo.svg" alt="Logo Jojô" />
           <ContainerTopoEmpregos>
             <ParagrafoTopoEmpregos>Empregos</ParagrafoTopoEmpregos>
-            <ImageTopoLogoEmpregos src="./emprego.png" alt="logo emprego" />
+            <ImageTopoLogoEmpregos src="./emprego.png" alt="Logo Emprego" />
           </ContainerTopoEmpregos>
         </ContainerTopo>
         <Section>

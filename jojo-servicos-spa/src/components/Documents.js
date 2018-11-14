@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import Footer from './Footer';
-
 import CelTable from './CelTable';
 
 import styled from 'styled-components';
@@ -31,7 +30,6 @@ const ContainerTopo = styled.div`
     display: flex;
     justify-content: center;
 	}
-}
 `;
 
 const ContainerTopoDocumento = styled.div`
@@ -167,13 +165,6 @@ const ContainerTabela = styled.div`
   background-color: #fff; 
   border: #fff solid 1px;
   border-radius: 5px;
-  /* width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5px; */
-
   @media(max-width: 640px){
     width: 85%;
     height: 100%;
@@ -191,15 +182,6 @@ const ContainerTabelaCabecalho = styled.div`
   background-color: #3358A4;
   border: #fff solid 1px;
   border-radius: 5px 5px 0 0;
-  /* width: 80%;
-  height: 15%;
-  color: #fff;
-  font-size: 15px;
-  font-family: Helvetica;
-  font-weight: bold;
-  background-color: #3358A4;
-  border: #fff solid 1px;
-  border-radius: 8px 8px 0 0; */
   @media(max-width: 640px){
     width: 100%;
     display: flex;
@@ -228,7 +210,6 @@ const ContainerTabelaConteudo = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   color: #000;
   font-family: Helvetica;
@@ -255,7 +236,6 @@ const MensageIcon = styled.img`
   width: 80%;
   height: 64%;
 `;
-
 
 
 class Documents extends Component {
@@ -315,10 +295,10 @@ class Documents extends Component {
     return (
       <Container>
         <ContainerTopo>
-          <ImageTopoLogoJojo src="./logo-jojo.svg" alt="logo Jojô" />
+          <ImageTopoLogoJojo src="./logo-jojo.svg" alt="Logo Jojô" />
           <ContainerTopoDocumento>
             <ParagrafoTopoDocumento>Documentos</ParagrafoTopoDocumento>
-            <ImageTopoLogoDocumento src="./rg.png" alt="logo RG" />
+            <ImageTopoLogoDocumento src="./rg.png" alt="Logo RG" />
           </ContainerTopoDocumento>
         </ContainerTopo>
         <Section>

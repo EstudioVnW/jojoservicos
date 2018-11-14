@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Header from './Header';
 import Footer from './Footer';
 
@@ -50,8 +51,6 @@ const ContainerLogin = styled.div`
   background: #F7F7F7;
   border-radius: 55px;
   @media(max-width: 640px){
-    /* width: 339px;
-    height: 70%; */
     width: 90%;
     height: 64%;
   }
@@ -70,7 +69,6 @@ const LogoJojo = styled.img`
   width: 170px;
   height: 108px;
   @media(max-width: 640px){
-    /* width: 200px; */
     width: 60%;
   }
 `;
@@ -99,8 +97,6 @@ const LoginFormInput = styled.input`
   outline: none;
   opacity: 0.7;
   @media(max-width: 640px){
-    /* width: 300px;
-    height: 44px; */
     width: 90%;
     height: 30%;
     border: 2px solid #3358A4;
@@ -116,7 +112,6 @@ const ContainerEntrar = styled.div`
   font-family: Helvetica;
   font-size: 15px;
   @media(max-width: 640px){
-    /* width: 320px; */
     width: 100%;
     height: 10%;
   }
@@ -148,8 +143,6 @@ const ButtonEntrar = styled.button`
   outline: none;
   background: linear-gradient(0deg,#69B42E,#569A21);
   @media(max-width: 640px){
-    /* width: 150px;
-    height: 40px; */
     width: 45%;
     height: 6vh;
   }
@@ -162,7 +155,7 @@ const Login= () =>
       <TituloTopo>Central de visualização de pedidos da Jojô</TituloTopo>
       <ContainerLogin>
         <ContainerLoginItems>
-          <LogoJojo src="./logo-jojo.svg" alt="logo jojo" />
+          <LogoJojo src="./logo-jojo.svg" alt="Logo jojo" />
           <ContainerInput>
             <LoginFormInput type="email" name="email" placeholder="Log in" />
             <LoginFormInput type="password" name="password" placeholder="Senha" />

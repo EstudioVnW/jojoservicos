@@ -37,7 +37,6 @@ const Solicitacoes = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  
   @media(max-width: 640px){
     display: none;
     
@@ -53,7 +52,6 @@ const SolicitacoesContainer = styled.div`
   flex-direction: column;
   @media(max-width: 640px){
     display: none;
-    
   }
 `;
 
@@ -68,18 +66,14 @@ const ContainerSolicitacoesConteudo = styled.div`
 const ContainerSolicitacoesItens = styled.div`
   width: 80%;
   height: 90%;
-  /* padding: 0 90px; */
   display: flex;
   justify-content: space-around;
   align-items: center;
-
 `;
 
 const SolicitacoesItens = styled.div`
   width: 25%;
   height: 95%;
-  /* margin: 0 90px; */
-  /* margin: 0 1%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,7 +88,6 @@ const SolicitacoesItensIMG = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
 `;
 
 const SolicitacoesItensLink = styled.div`
@@ -168,7 +161,6 @@ const ContainerPrincipal = styled.div`
   align-items: center;
   @media(max-width: 640px){
     padding: 0;
-    
   }
 `;
 
@@ -218,9 +210,7 @@ const TituloMobile = styled.div`
     color: #fff;
     font-family: Helvetica;
     font-weight: bold;
-    
   }
-
 `;
 
 const ContainerTabela = styled.div`
@@ -232,13 +222,6 @@ const ContainerTabela = styled.div`
   background-color: #fff; 
   border: #fff solid 1px;
   border-radius: 5px;
-  /* width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 5px; */
-
   @media(max-width: 640px){
     width: 85%;
     height: 100%;
@@ -256,15 +239,6 @@ const ContainerTabelaCabecalho = styled.div`
   background-color: #3358A4;
   border: #fff solid 1px;
   border-radius: 5px 5px 0 0;
-  /* width: 80%;
-  height: 15%;
-  color: #fff;
-  font-size: 15px;
-  font-family: Helvetica;
-  font-weight: bold;
-  background-color: #3358A4;
-  border: #fff solid 1px;
-  border-radius: 8px 8px 0 0; */
   @media(max-width: 640px){
     width: 100%;
     display: flex;
@@ -289,7 +263,18 @@ const HeaderTable = styled.div`
   align-items: center;
 `;
 
-const HeaderTableTema = styled.div`
+const HeaderTableTelefone = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 640px){
+    display: none;
+  }
+`;
+
+const HeaderTableEmail = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -336,7 +321,7 @@ const ContainerTabelaConteudo = styled.div`
   background-color: #fff;
   @media(max-width: 640px){
     width: 100%;
-    height: 100vh;
+    height: 80vh;
     display: flex;
   }
 `;
@@ -372,7 +357,6 @@ const MensageIcon = styled.img`
   height: 64%;
 
 `;
-
 
 
 class Admin extends Component {
@@ -433,7 +417,7 @@ class Admin extends Component {
     return (
       <Container>
         <section className="caixa_topo">
-          <img className="caixa_topo--logo" src="./logo-jojo.svg" alt="logo Jojô" />
+          <img className="caixa_topo--logo" src="./logo-jojo.svg" alt="Logo Jojô" />
           <p className="caixa_topo--texto">
           Central de visualização de pedidos
           </p>
@@ -446,7 +430,7 @@ class Admin extends Component {
                 <ContainerSolicitacoesItens>
                   <SolicitacoesItens>
                     <SolicitacoesItensIMG>
-                      <ImagesSolicitacoes src="./rg.png" />
+                      <ImagesSolicitacoes src="./rg.png" alt= "RG"/>
                     </SolicitacoesItensIMG>
                     <SolicitacoesItensLink>
                       <A href="/Documents"><ButtonDocumentos>Documentos</ButtonDocumentos></A>
@@ -454,7 +438,7 @@ class Admin extends Component {
                   </SolicitacoesItens>
                   <SolicitacoesItens>
                     <SolicitacoesItensIMG>
-                      <ImagesSolicitacoes src="./emprego.png" />
+                      <ImagesSolicitacoes src="./emprego.png" alt="Emprego"/>
                     </SolicitacoesItensIMG>
                     <SolicitacoesItensLink>
                       <A href="/Jobs"><ButtonEmprego>Emprego</ButtonEmprego></A>
@@ -462,7 +446,7 @@ class Admin extends Component {
                   </SolicitacoesItens>
                   <SolicitacoesItens>
                     <SolicitacoesItensIMG>
-                      <ImagesSolicitacoes src="negocios.png" />
+                      <ImagesSolicitacoes src="negocios.png" alt="Negócios"/>
                     </SolicitacoesItensIMG>
                     <SolicitacoesItensLink>
                       <A href="/Business"><ButtonNegocios>Negócios</ButtonNegocios></A>
@@ -482,9 +466,9 @@ class Admin extends Component {
                 <ContainerTabelaCabecalho>
                   <ContainerTabelaCabecalhoItems>
                     <HeaderTable>Cliente</HeaderTable>
-                    <HeaderTable>Telefone</HeaderTable>
-                    <HeaderTable>E-mail</HeaderTable>
-                    <HeaderTableTema>Tema</HeaderTableTema> 
+                    <HeaderTableTelefone>Telefone</HeaderTableTelefone> 
+                    <HeaderTableEmail>E-mail</HeaderTableEmail> 
+                    <HeaderTable>Tema</HeaderTable> 
                     <HeaderTable>Categoria</HeaderTable>
                     <HeaderTableEntrada>Entrada</HeaderTableEntrada> 
                     <HeaderTableSaida>Saida</HeaderTableSaida> 
@@ -497,11 +481,13 @@ class Admin extends Component {
                       return (
                         <Row>
                           <CelTable value={item['cliente']} />
-                          <CelTable value={item['telefone']} />
-                          <CelTable value={item['email']} />
                           <RowVariation>
-                            <CelTable value={item['tema']} />
+                            <CelTable value={item['telefone']} />
                           </RowVariation>
+                          <RowVariation> 
+                            <CelTable value={item['email']} /> 
+                          </RowVariation>
+                          <CelTable value={item['tema']} />
                           <CelTable value={item['categoria']} />
                           <RowVariation>
                             <CelTable value={item['entrada']} />
