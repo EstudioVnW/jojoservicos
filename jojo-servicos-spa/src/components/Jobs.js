@@ -30,7 +30,6 @@ const ContainerTopo = styled.div`
     display: flex;
     justify-content: center;
 	}
-
 `;
 
 const ContainerTopoEmpregos = styled.div`
@@ -43,7 +42,7 @@ const ContainerTopoEmpregos = styled.div`
 `;
 
 const ImageTopoLogoEmpregos = styled.img` 
-  width: 20%;
+  width: 21%;
   height: 50%;
   padding-right: 2%;
   @media (max-width: 640px){
@@ -104,10 +103,6 @@ const SolicitacoesConteudo = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  @media(max-width: 640px){
-    
-    
-  }
 `;
 
 const ContainerPrincipal = styled.div`

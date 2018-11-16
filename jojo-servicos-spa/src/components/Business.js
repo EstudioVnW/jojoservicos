@@ -33,7 +33,7 @@ const ContainerTopo = styled.div`
 `;
 
 const ContainerTopoNegocios = styled.div`
-  width: 20%;
+  width: 19%;
   height: 100%;
   margin: 0 0 0 3.5%;
   display: flex;
@@ -92,9 +92,6 @@ const Solicitacoes = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  @media(max-width: 640px){
-    
-  }
 `;
 
 const SolicitacoesConteudo = styled.div`
@@ -103,10 +100,6 @@ const SolicitacoesConteudo = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  @media(max-width: 640px){
-    
-    
-  }
 `;
 
 const ContainerPrincipal = styled.div`

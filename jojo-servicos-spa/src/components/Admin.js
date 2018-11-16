@@ -39,10 +39,8 @@ const Solicitacoes = styled.div`
   flex-direction: column;
   @media(max-width: 640px){
     display: none;
-    
   }
 `;
-
 
 const SolicitacoesContainer = styled.div`
   width: 100%;
@@ -69,6 +67,9 @@ const ContainerSolicitacoesItens = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media(min-width: 1440px){
+    height: 80%;
+  }
 `;
 
 const SolicitacoesItens = styled.div`
@@ -199,6 +200,9 @@ const Titulo = styled.div`
   font-weight: bold;
   @media(max-width: 640px){
     display: none;
+  }
+  @media(min-width: 1440px){
+    padding: 0 107px 10px;
   }
 `;
 
@@ -355,7 +359,6 @@ const RowVariation = styled.div`
 const MensageIcon = styled.img`
   width: 80%;
   height: 64%;
-
 `;
 
 
