@@ -26,9 +26,8 @@ class App extends Component {
           textId: 1
         }
       ],
-      atendimentos:[{
-        parameters: {}
-      }]
+      pedidos:[{ }],
+      cliente: { }
     };
     this.sendEventUsr = this.sendEventUsr.bind(this);
     this.enviarMensagemUsr = this.enviarMensagemUsr.bind(this);
@@ -39,11 +38,12 @@ class App extends Component {
     console.log('evento->', text);
     sendEvent.sendEvent(text, this.props.sessionId)
     .then(res => {
+      console.log('data->', res.data);
       console.log('resposta do evento->', res.data.result.resolvedQuery);
       console.log('indexPedido->', this.state.indexPedido);
-      console.log('atendimentos->', this.state.atendimentos);
+      console.log('pedidos->', this.state.pedidos);
       console.log('action->', res.data.result.action);
-      console.log('atendimento corrente->', this.state.atendimentos[this.state.indexPedido]);
+      console.log('pedido corrente->', this.state.pedidos[this.state.indexPedido]);
 
       let { 
         fulfillment, 
@@ -73,27 +73,25 @@ class App extends Component {
       let newMensagens = [...this.state.mensagens, ...novasMensagens];
 
       if( action === 'exibir-opcoes-secao' ) {
-        let atendimento = this.state.atendimentos;
-        atendimento.push({ parameters: { } });
-        this.setState({
+        let pedido = this.state.pedidos;
+        pedido.push({ parameters: { } });
+        this.setState({ 
           indexPedido: this.state.indexPedido + 1,
-          atendimentos: atendimento,
+          pedidos: pedido,
           mensagens: newMensagens
         });
       }else{
-        let newState = {
-          parameters: {...this.state.atendimentos[this.state.indexPedido].parameters, ...parameters, ...{ atualizacao: new Date().toString()}}
-        };
+        let newState = {...this.state.pedidos[this.state.indexPedido], ...parameters, ...{ atualizacao: new Date().toString()}};
         
-        let atendimentos = this.state.atendimentos;
-        atendimentos[this.state.indexPedido] =  newState;
+        let pedidos = this.state.pedidos;
+        pedidos[this.state.indexPedido] =  newState;
 
         this.setState({ 
-          atendimentos: atendimentos,
+          pedidos: pedidos,
           mensagens: newMensagens
         });
         
-        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), atendimentos);
+        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), pedidos);
       }
     });
   }
@@ -101,6 +99,7 @@ class App extends Component {
   enviarMensagemUsr(text){
     sendUserSays.sendUserSays(text, this.props.sessionId)
     .then(res => {
+      
       let novasMensagens;
       let { 
         fulfillment, 
@@ -126,25 +125,57 @@ class App extends Component {
           });
       }
 
-      let newState = {
-        parameters: {...this.state.atendimentos[this.state.indexPedido].parameters, ...parameters, ...{ atualizacao: new Date().toString()}}
-      };
-
-      let newMensagens = [...this.state.mensagens, ...novasMensagens];
-      let atendimentos = [];
-      atendimentos.push(newState);
-      this.setState({ 
-        atendimentos: atendimentos,
-        mensagens: newMensagens
+      let dadosCliente = res.data.result.contexts.find((item)=>{
+        return item['name'] == 'dados-cliente';
       });
-      databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), atendimentos);
+
+      console.log('');
+      console.log('parameters->', parameters);
+      console.log('contexts 2->', dadosCliente);
+      console.log(this.state);
+
+      let pedidos = [];
+      let cliente;
+      if(dadosCliente){
+        console.log('gravar cliente');
+
+        cliente = {
+          ...this.state.cliente, 
+          ...parameters, 
+          ...{ atualizacao: new Date().toString()}
+        };
+        
+        this.setState({ 
+          cliente: cliente,
+          mensagens: [...this.state.mensagens, ...novasMensagens]
+        });
+      }else{
+        console.log('gravar pedido');
+
+        let newState = {
+          ...this.state.pedidos[this.state.indexPedido], 
+          ...parameters, 
+          ...{ atualizacao: new Date().toString()}
+        };
+        
+        pedidos.push(newState);
+        this.setState({ 
+          cliente: pedidos,
+          mensagens: [...this.state.mensagens, ...novasMensagens]
+        });
+      }
+      
+      if(dadosCliente){
+        databaseApi.gravarCliente(this.props.doc.pegarIdDoc(), cliente);
+      }else{
+        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), pedidos);
+      }
+      
     });
-    
+
     this.setState({
       mensagens: [...this.state.mensagens, {text: text, textId: new Date().getTime(), emissor:"usuario"}],
-      atendimentos: [{
-        parameters: this.state.atendimentos[this.state.indexPedido].parameters
-      }]
+      pedidos: [ this.state.pedidos[this.state.indexPedido] ]
     });
   }
   open = () => {
