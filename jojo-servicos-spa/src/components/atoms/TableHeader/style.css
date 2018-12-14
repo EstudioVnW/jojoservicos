@@ -1,0 +1,14 @@
+.table-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    color: #fff;
+    font-size: 15px;
+    font-family: Helvetica;
+    font-weight: bold;
+    border: #fff solid 1px;
+    border-radius: 5px 5px 0 0;
+    padding-right: 14px;
+}

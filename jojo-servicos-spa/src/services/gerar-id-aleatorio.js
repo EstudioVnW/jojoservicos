@@ -1,10 +1,10 @@
 var gerarPalavra = require('./gerar-palavra');
 
 function gerarId(){
-    var prefixo = '-JOJO';
-    var token = gerarPalavra(12);
+    var prefixo = '-jojo';
+    var token = gerarPalavra(6);
     var timestamp = new Date().getTime();
-    return `${prefixo}-${timestamp}-${token}`;
+    return `${prefixo}${timestamp}${token}`;
 }
 
 module.exports = gerarId;

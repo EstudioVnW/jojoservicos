@@ -148,29 +148,55 @@ const ButtonEntrar = styled.button`
   }
 `;
 
-const Login= () =>
-  <Container>
-    <Header />
-    <Section>
-      <TituloTopo>Central de visualização de pedidos da Jojô</TituloTopo>
-      <ContainerLogin>
-        <ContainerLoginItems>
-          <LogoJojo src="./logo-jojo.svg" alt="Logo jojo" />
-          <ContainerInput>
-            <LoginFormInput type="email" name="email" placeholder="Log in" />
-            <LoginFormInput type="password" name="password" placeholder="Senha" />
-          </ContainerInput>
-          <ContainerEntrar>
-            <ContainerEntrarItems>
-              <A href=" ">Esqueceu a senha?</A>
-              <ButtonEntrar>Entrar</ButtonEntrar>
-            </ContainerEntrarItems>
-          </ContainerEntrar>
-        </ContainerLoginItems>
-      </ContainerLogin>
-    </Section>
-    <Footer />
-  </Container>
-
+class Login extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      password: ''
+    };
+    this.autenticar = this.autenticar.bind(this);
+    this.handlerOnChange = this.handlerOnChange.bind(this);
+    this.handlerOnClick = this.handlerOnClick.bind(this);
+  }
+  autenticar(){
+    console.log("autenticar");
+  }
+  handlerOnChange(){
+    this.autenticar();
+  }
+  handlerOnClick(){
+    console.log("click");
+  }
+  render(){
+    return (
+      <Container>
+        <Header />
+        <Section>
+          <TituloTopo>Central de visualização de pedidos da Jojô</TituloTopo>
+          <ContainerLogin>
+            <ContainerLoginItems>
+              <LogoJojo src="./logo-jojo.svg" alt="Logo jojo" />
+              <ContainerInput>
+                <LoginFormInput 
+                  onChange={this.handlerOnChange}
+                  type="email" name="email" placeholder="Log in" />
+                <LoginFormInput 
+                  onChange={this.handlerOnChange}
+                  type="password" name="password" placeholder="Senha" />
+              </ContainerInput>
+              <ContainerEntrar>
+                <ContainerEntrarItems>
+                  <A href=" ">Esqueceu a senha?</A>
+                  <ButtonEntrar>Entrar</ButtonEntrar>
+                </ContainerEntrarItems>
+              </ContainerEntrar>
+            </ContainerLoginItems>
+          </ContainerLogin>
+        </Section>
+        <Footer />
+      </Container>);
+  }
+}
 
 export default Login;

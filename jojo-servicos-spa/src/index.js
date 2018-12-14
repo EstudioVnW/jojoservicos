@@ -7,9 +7,9 @@ import './index.css';
 import App from './App';
 import Login from './components/Login';
 import Admin from './components/Admin';
-import Documents from './components/Documents';
-import Jobs from './components/Jobs';
-import Business from './components/Business';
+import Documents from './components/pages/Documents';
+import Jobs from './components/pages/Jobs';
+import Business from './components/pages/Business';
 
 
 import gerarId from './services/gerar-id-aleatorio';
