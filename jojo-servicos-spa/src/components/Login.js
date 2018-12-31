@@ -1,4 +1,6 @@
 import React from 'react';
+import Firebase from '../services/firebase';
+import history from './pages/history';
 
 import Header from './Header';
 import Footer from './Footer';
@@ -141,6 +143,7 @@ const ButtonEntrar = styled.button`
   border: #000;
   border-radius: 18px;
   outline: none;
+  cursor:pointer;
   background: linear-gradient(0deg,#69B42E,#569A21);
   @media(max-width: 640px){
     width: 45%;
@@ -148,29 +151,74 @@ const ButtonEntrar = styled.button`
   }
 `;
 
-const Login= () =>
-  <Container>
-    <Header />
-    <Section>
-      <TituloTopo>Central de visualização de pedidos da Jojô</TituloTopo>
-      <ContainerLogin>
-        <ContainerLoginItems>
-          <LogoJojo src="./logo-jojo.svg" alt="Logo jojo" />
-          <ContainerInput>
-            <LoginFormInput type="email" name="email" placeholder="Log in" />
-            <LoginFormInput type="password" name="password" placeholder="Senha" />
-          </ContainerInput>
-          <ContainerEntrar>
-            <ContainerEntrarItems>
-              <A href=" ">Esqueceu a senha?</A>
-              <ButtonEntrar>Entrar</ButtonEntrar>
-            </ContainerEntrarItems>
-          </ContainerEntrar>
-        </ContainerLoginItems>
-      </ContainerLogin>
-    </Section>
-    <Footer />
-  </Container>
-
+class Login extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      email: '',
+      password: ''
+    };
+    this.autenticar = this.autenticar.bind(this);
+    this.handlerOnChangeEmail = this.handlerOnChangeEmail.bind(this);
+    this.handlerOnChangePassWord = this.handlerOnChangePassWord.bind(this);
+    this.handlerOnClick = this.handlerOnClick.bind(this);
+  }
+  autenticar(){
+    console.log("state: ", this.state);
+    let { email, password } = this.state;
+    Firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(response => {
+        console.log("deu certo!", response);
+        history.push('/admin');
+      })
+      .catch(function(error) {
+        console.log(error.message);
+      });
+  }
+  handlerOnChangeEmail(e){
+    console.log(e.target.value);
+    let { value } = e.target;
+    this.setState(state => ({...state, email: value}));
+  }
+  handlerOnChangePassWord(e){
+    console.log(e.target.value);
+    let { value } = e.target;
+    this.setState(state => ({...state, password: value}));
+  }
+  handlerOnClick(){
+    this.autenticar();
+  }
+  render(){
+    return (
+      <Container>
+        <Header />
+        <Section>
+          <TituloTopo>Central de visualização de pedidos da Jojô</TituloTopo>
+          <ContainerLogin>
+            <ContainerLoginItems>
+              <LogoJojo src="./logo-jojo.svg" alt="Logo jojo" />
+              <ContainerInput>
+                <LoginFormInput 
+                  onChange={this.handlerOnChangeEmail}
+                  value={this.state.email}
+                  type="email" name="email" placeholder="Log in" />
+                <LoginFormInput 
+                  onChange={this.handlerOnChangePassWord}
+                  value={this.state.password}
+                  type="password" name="password" placeholder="Senha" />
+              </ContainerInput>
+              <ContainerEntrar>
+                <ContainerEntrarItems>
+                  <A href=" ">Esqueceu a senha?</A>
+                  <ButtonEntrar onClick={this.handlerOnClick}>Entrar</ButtonEntrar>
+                </ContainerEntrarItems>
+              </ContainerEntrar>
+            </ContainerLoginItems>
+          </ContainerLogin>
+        </Section>
+        <Footer />
+      </Container>);
+  }
+}
 
 export default Login;

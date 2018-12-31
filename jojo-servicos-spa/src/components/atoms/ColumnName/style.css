@@ -1,0 +1,6 @@
+.column-name{
+    width: 160px;
+}
+.column-name:first-child { 
+    padding-left: 20px
+}

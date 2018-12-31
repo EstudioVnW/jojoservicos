@@ -1,0 +1,9 @@
+.mensage-empty-list{
+  text-align: center;
+  color: #BBB;
+  height: 100%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

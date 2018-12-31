@@ -16,8 +16,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.dialogRef = React.createRef();
-    this.state = { 
-      indexPedido: 0,
+    this.state = {
       compartilhar:false,
       mensagens: [
         {
@@ -26,7 +25,7 @@ class App extends Component {
           textId: 1
         }
       ],
-      pedidos:[{ }],
+      pedido: { status: "Pendente"},
       cliente: { }
     };
     this.sendEventUsr = this.sendEventUsr.bind(this);
@@ -34,25 +33,29 @@ class App extends Component {
     this.scrollToBottom = this.scrollToBottom.bind(this);
   }
   sendEventUsr(text){
-    console.log(' ');
-    console.log('evento->', text);
     sendEvent.sendEvent(text, this.props.sessionId)
     .then(res => {
-      console.log('data->', res.data);
-      console.log('resposta do evento->', res.data.result.resolvedQuery);
-      console.log('indexPedido->', this.state.indexPedido);
-      console.log('pedidos->', this.state.pedidos);
-      console.log('action->', res.data.result.action);
-      console.log('pedido corrente->', this.state.pedidos[this.state.indexPedido]);
+      // console.log('data->', res.data);
+      // console.log('resposta do evento->', res.data.result.resolvedQuery);
+      // console.log('pedido->', this.state.pedido);
+      // console.log('action->', res.data.result.action);
 
       let { 
+        resolvedQuery,
         fulfillment, 
         parameters, 
         action
       } = res.data.result;
+
+      if(resolvedQuery === 'outro-pedido-sim'){
+        console.log("GERAR UM NOVO DOCUMENTO");
+        this.props.doc.modificarIdDoc();
+        this.setState({ pedido: { status: "Pendente" } });
+        databaseApi.gravarCliente(this.props.doc.pegarIdDoc(), this.state.cliente);
+      }
       
-      let novasMensagens;
-      novasMensagens = fulfillment.messages.map(
+      // pega a mensagens retornadas pelo bot e coloca no array da conversa
+      let novasMensagens = fulfillment.messages.map(
         (item, index) => {
           return {
             text: item.speech, 
@@ -61,37 +64,42 @@ class App extends Component {
           }
       });
 
+      // pega as opções correspondentes a action e coloca no array da conversa
       if(opcoes[action]){
         novasMensagens.push(
           {
             opcoes: opcoes[action], 
             textId: new Date().getTime(), 
-            emissor:"bot"
+            emissor: "bot"
           });
       }
 
       let newMensagens = [...this.state.mensagens, ...novasMensagens];
 
       if( action === 'exibir-opcoes-secao' ) {
-        let pedido = this.state.pedidos;
-        pedido.push({ parameters: { } });
-        this.setState({ 
-          indexPedido: this.state.indexPedido + 1,
-          pedidos: pedido,
+        this.setState({
+          pedido: this.state.pedido,
           mensagens: newMensagens
         });
       }else{
-        let newState = {...this.state.pedidos[this.state.indexPedido], ...parameters, ...{ atualizacao: new Date().toString()}};
-        
-        let pedidos = this.state.pedidos;
-        pedidos[this.state.indexPedido] =  newState;
-
+        let pedido = {
+          ...this.state.pedido, 
+          ...parameters, 
+          ...{ 
+            atualizacao: new Date().toString() 
+          }
+        };
+        //console.log('pedido', pedido);
         this.setState({ 
-          pedidos: pedidos,
+          pedido: pedido,
           mensagens: newMensagens
         });
+
+        //console.log('state', this.state);
+        //console.log('res.data.result', res.data.result.metadata.intentName);
+        //console.log('parameters->', parameters);
         
-        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), pedidos);
+        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), pedido);
       }
     });
   }
@@ -126,15 +134,15 @@ class App extends Component {
       }
 
       let dadosCliente = res.data.result.contexts.find((item)=>{
-        return item['name'] == 'dados-cliente';
+        return item['name'] === 'dados-cliente';
       });
 
-      console.log('');
+      //console.log('res.data.result', res.data.result.metadata.intentName);
       console.log('parameters->', parameters);
-      console.log('contexts 2->', dadosCliente);
-      console.log(this.state);
+      //console.log('contexts 2->', dadosCliente);
+      //console.log(this.state);
 
-      let pedidos = [];
+      let pedido;
       let cliente;
       if(dadosCliente){
         console.log('gravar cliente');
@@ -152,15 +160,14 @@ class App extends Component {
       }else{
         console.log('gravar pedido');
 
-        let newState = {
-          ...this.state.pedidos[this.state.indexPedido], 
+        pedido = {
+          ...this.state.pedido, 
           ...parameters, 
           ...{ atualizacao: new Date().toString()}
         };
-        
-        pedidos.push(newState);
+
         this.setState({ 
-          cliente: pedidos,
+          pedido: pedido,
           mensagens: [...this.state.mensagens, ...novasMensagens]
         });
       }
@@ -168,14 +175,15 @@ class App extends Component {
       if(dadosCliente){
         databaseApi.gravarCliente(this.props.doc.pegarIdDoc(), cliente);
       }else{
-        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), pedidos);
+        console.log('pedido', pedido);
+        databaseApi.gravarPedido(this.props.doc.pegarIdDoc(), { ...pedido });
       }
       
     });
 
     this.setState({
       mensagens: [...this.state.mensagens, {text: text, textId: new Date().getTime(), emissor:"usuario"}],
-      pedidos: [ this.state.pedidos[this.state.indexPedido] ]
+      pedido: this.state.pedido
     });
   }
   open = () => {
