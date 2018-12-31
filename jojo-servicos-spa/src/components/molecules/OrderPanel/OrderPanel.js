@@ -7,14 +7,16 @@ import Title from '../../atoms/Title/Title';
 const OrderPanel = (props) => {
 	console.log('props.labelsHeader', props.labelsHeader);
 	return (
-		<div class='order-panel'>
+		<div className='order-panel'>
 			<Title>Novas solicitações:</Title>
-			<Table  labelsHeader={ props.labelsHeader } 
+			<Table  backgroundColor={props.backgroundColor}
+							labelsHeader={ props.labelsHeader } 
 							data={ props.atendimentosPendentes }
 							handlerOnChange={ props.handlerOnChange } />
 
 			<Title>Processos finalizados:</Title>
-			<Table  labelsHeader={ props.labelsHeader } 
+			<Table  backgroundColor={props.backgroundColor}
+							labelsHeader={ props.labelsHeader } 
 							data={ props.atendimentosFinalizados }
 							handlerOnChange={ props.handlerOnChange } />
 		</div>

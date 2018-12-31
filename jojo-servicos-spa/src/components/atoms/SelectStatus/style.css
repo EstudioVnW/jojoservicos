@@ -1,4 +1,10 @@
 .select-status{
     width: 160px;
     padding-left: 20px;
+    background-color: #FFF;
+    border: 0;
+    border-right: 1px solid #ddd
+}
+.select-status--option{
+    font-weight: bold
 }

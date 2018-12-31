@@ -1,4 +1,6 @@
-import database from './database';
+import firebase from './firebase';
+
+let database = firebase.database();
 
 const gravarPedido = (id, obj) => {
   database.ref('atendimentos/'+ id + '/pedidos').set(obj);

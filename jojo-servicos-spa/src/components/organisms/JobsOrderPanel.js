@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import database from '../../services/database';
+import firebase from '../../services/firebase';
 
 import OrderPanel from '../molecules/OrderPanel/OrderPanel'
 
@@ -10,16 +10,17 @@ class Business extends Component {
       atendimentosPendentes: [ ],
       atendimentosFinalizados: [ ]
     };
+    this.database = firebase.database();
     this.handlerOnChange = this.handlerOnChange.bind(this);
   }
 
   handlerOnChange(key, status){
-    database.ref('atendimentos/' + key)
+    this.database.ref('atendimentos/' + key)
       .update({'/pedidos/status': status});
   }
 
   componentDidMount(){
-    database.ref('atendimentos')
+    this.database.ref('atendimentos')
       .orderByChild('pedidos/tema')
       .equalTo("Encontrar emprego")
       .on('value', (snapshot) => {
@@ -68,6 +69,7 @@ class Business extends Component {
     console.log('labelsHeader', labelsHeader);
     return (
 			<OrderPanel 
+        backgroundColor={'rgb(131, 33, 154)'}
 				labelsHeader={ labelsHeader }
 				atendimentosPendentes={ atendimentosPendentes }
 				atendimentosFinalizados={ atendimentosFinalizados }

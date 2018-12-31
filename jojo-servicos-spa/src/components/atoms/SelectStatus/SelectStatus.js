@@ -26,7 +26,7 @@ class SelectStatus extends Component {
 		let { selected } = this.state;
 		return( 
 			<select name="status" className="select-status" value={selected} onChange={this.handlerOnChange}>
-				{ options.map(item => ( <option key={item} value={item}>{item}</option> ) ) }
+				{ options.map(item => ( <option key={item} value={item} class="select-status--option">{item}</option> ) ) }
 			</select> );
 	}
 }
