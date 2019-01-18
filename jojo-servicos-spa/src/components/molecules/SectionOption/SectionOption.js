@@ -72,8 +72,8 @@ const ContainerSolicitacoesItens = styled.div`
 
 const SolicitacoesItens = styled.div`
 	margin: 0;
-	padding: 10px;
-  width: 25%;
+	// padding: 10px;
+  width: 22%;
   height: 95%;
   display: flex;
   flex-direction: column;
@@ -96,6 +96,7 @@ const SolicitacoesItensLink = styled.div`
   height: 30%;
   display: flex;
   align-items: flex-end;
+  
 `;
 
 const A = styled.a`
