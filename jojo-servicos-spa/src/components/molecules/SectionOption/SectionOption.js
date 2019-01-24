@@ -93,9 +93,9 @@ const SolicitacoesItensIMG = styled.div`
 
 const SolicitacoesItensLink = styled.div`
   width: 100%;
-  height: 30%;
-  display: flex;
-  align-items: flex-end;
+  // height: 40%;
+  // display: flex;
+  // align-items: flex-end;
   
 `;
 
@@ -103,7 +103,7 @@ const A = styled.a`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  // align-items: flex-end;
   text-decoration:none; 
 	cursor: pointer
 `;
@@ -138,7 +138,7 @@ const ButtonEmprego = styled.button`
   border: #000;
   border-radius: 18px;
   outline: none;
-  background: linear-gradient(#83219A, #40044E);
+  // background: linear-gradient(#83219A, #40044E);
 `;
 
 const ButtonNegocios = styled.button`

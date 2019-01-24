@@ -9,7 +9,7 @@ class Jobs extends Component {
   render(){
     return (
       <div style={{width: '100%'}}>
-        <Header title="Trabalho" color={'rgb(131, 33, 154)'} handlerOnClick={this.props.handlerOnClick} />
+        <Header title="Emprego" color={'rgb(131, 33, 154)'} font-weight={'bold'}  handlerOnClick={this.props.handlerOnClick} />
         <JobsOrderPanel />
         <Footer />
       </div>

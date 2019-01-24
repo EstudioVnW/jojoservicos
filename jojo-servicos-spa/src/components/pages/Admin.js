@@ -138,7 +138,7 @@ class Admin extends Component {
     return (
       <Container>
         <Header title="Central de visualização de pedidos"  handlerOnClick={this.logout}
-        color={'rgb(51, 88, 164)'} 
+        color={'rgb(51, 88, 164)'} border={'none'}
         fontSize={'1em'} />
         <Section>
           <Solicitacoes>

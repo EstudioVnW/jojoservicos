@@ -59,9 +59,10 @@
 }
 
 .paragrafo-topo-negocios{
-  font-size: 28px;
+  font-size: 1.5em;
 	font-family: Helvetica;
 	padding-bottom: 2px;
+	border-bottom: 3px solid #69B42E;
 }
 
 .image-topo-logo-jojo{
