@@ -21,7 +21,7 @@ const Container = styled.div`
     width: 100%;
     height: 100vh;
   }
-`;
+`
 
 const Section = styled.section`
   width: 100%;
@@ -38,7 +38,7 @@ const Section = styled.section`
     border-top: 4px solid #69B42E;
     border-bottom: 4px solid #69B42E;
   }
-`;
+`
 
 const Solicitacoes = styled.div`
   width: 100%;
@@ -47,10 +47,12 @@ const Solicitacoes = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: Helvetica;
+  font-weight:bold;
   @media(max-width: 640px){
     display: none;
   }
-`;
+`
 
 const SolicitacoesContainer = styled.div`
   width: 100%;
@@ -61,7 +63,7 @@ const SolicitacoesContainer = styled.div`
   @media(max-width: 640px){
     display: none;
   }
-`;
+`
 
 const ContainerSolicitacoesConteudo = styled.div`
   width: 100%;
@@ -69,7 +71,7 @@ const ContainerSolicitacoesConteudo = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
+`
 
 const ContainerSolicitacoesItens = styled.div`
   width: 80%;
@@ -80,7 +82,7 @@ const ContainerSolicitacoesItens = styled.div`
   @media(min-width: 1440px){
     height: 80%;
   }
-`;
+`
 
 const ContainerPrincipal = styled.div`
   width: 100%;
@@ -92,7 +94,7 @@ const ContainerPrincipal = styled.div`
   @media(max-width: 640px){
     padding: 0;
   }
-`;
+`
 
 const ContainerPrincipalConteudo = styled.div`
   width: 100%;
@@ -100,7 +102,8 @@ const ContainerPrincipalConteudo = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-`;
+  // background-color: coral;
+`
 
 class Admin extends Component {
   constructor(props){
@@ -135,12 +138,12 @@ class Admin extends Component {
     return (
       <Container>
         <Header title="Central de visualização de pedidos"  handlerOnClick={this.logout}
-        color={'rgb(51, 88, 164)'} 
-        fontSize={'18px'} />
+        color={'rgb(51, 88, 164)'} border={'none'}
+        fontSize={'1em'} />
         <Section>
           <Solicitacoes>
             <SolicitacoesContainer>
-            <Title style={{width:'75%'}}>Temas:</Title>
+            <Title style={{width:'75%'}}>Novas solicitações:</Title>
               <ContainerSolicitacoesConteudo>
                 <ContainerSolicitacoesItens>
                   <SelectionOption image="rg.png" link="/Documents" label="Documentos" />
@@ -152,7 +155,7 @@ class Admin extends Component {
           </Solicitacoes>
           <ContainerPrincipal>
             <ContainerPrincipalConteudo>
-                <Title style={{width:'75%'}}>Novas solicitações:</Title>
+                <Title style={{width:'75%'}}>Processos finalizados:</Title>
                 <CompletedOrdersTable />
             </ContainerPrincipalConteudo>
           </ContainerPrincipal>

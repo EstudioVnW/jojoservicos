@@ -30,12 +30,14 @@
 	height: 80px;
 }
 .logout-button{
-	color:#000;
+	color:rgb(51, 88, 164);
 	height: 80px;
 	line-height: 80px;
 	margin: 0 20px;
 	padding: 0 20px;
-	cursor: pointer
+	cursor: pointer;
+	font-weight: 600;
+	font-family: Helvetica
 }
 .container-topo-negocios{
 	width: 100%;
@@ -57,12 +59,10 @@
 }
 
 .paragrafo-topo-negocios{
-	margin-right: 24px;
-  font-size: 28px;
+  font-size: 1.5em;
 	font-family: Helvetica;
-	font-weight: bold;
-	border-bottom: 5px solid #69B42E;
 	padding-bottom: 2px;
+	border-bottom: 3px solid #69B42E;
 }
 
 .image-topo-logo-jojo{
