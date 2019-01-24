@@ -121,39 +121,39 @@ const ButtonDocumentos = styled.button`
   align-items: flex-end;
   color: #fff;
   font-family: Helvetica;
-  border: #000;
+  // border: #000;
   border-radius: 18px;
   outline: none;
-  background: linear-gradient(#3358A4, #0C275E);
+  // background: linear-gradient(#3358A4, #0C275E);
 `;
 
-const ButtonEmprego = styled.button`
-  width: 60%;
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: #fff;
-  font-family: Helvetica;
-  border: #000;
-  border-radius: 18px;
-  outline: none;
-  // background: linear-gradient(#83219A, #40044E);
-`;
+// const ButtonEmprego = styled.button`
+//   width: 60%;
+//   height: 4vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-end;
+//   color: #fff;
+//   font-family: Helvetica;
+//   border: #000;
+//   border-radius: 18px;
+//   outline: none;
+//   // background: linear-gradient(#83219A, #40044E);
+// `;
 
-const ButtonNegocios = styled.button`
-  width: 60%;
-  height: 4vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  color: #fff;
-  font-family: Helvetica;
-  border: #000;
-  border-radius: 18px;
-  outline: none;
-  background: linear-gradient(#69B42E, #34670C);
-`;
+// const ButtonNegocios = styled.button`
+//   width: 60%;
+//   height: 4vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-end;
+//   color: #fff;
+//   font-family: Helvetica;
+//   border: #000;
+//   border-radius: 18px;
+//   outline: none;
+//   background: linear-gradient(#69B42E, #34670C);
+// `;
 
 class SectionOption extends Component {
   constructor(props){
@@ -166,7 +166,7 @@ class SectionOption extends Component {
 					<ImagesSolicitacoes src={this.props.image} alt= "RG"/>
 				</SolicitacoesItensIMG>
 				<SolicitacoesItensLink>
-					<A href={this.props.link}><ButtonDocumentos>{this.props.label}</ButtonDocumentos></A>
+					<A href={this.props.link}><ButtonDocumentos style={{backgroundColor: this.props.backgroundColor, border:this.props.border}}>{this.props.label}</ButtonDocumentos></A>
 				</SolicitacoesItensLink>
 			</SolicitacoesItens> )
 	}

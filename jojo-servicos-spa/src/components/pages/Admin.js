@@ -138,7 +138,7 @@ class Admin extends Component {
     return (
       <Container>
         <Header title="Central de visualização de pedidos"  handlerOnClick={this.logout}
-        color={'rgb(51, 88, 164)'} border={'none'}
+        color={'rgb(51, 88, 164)'} borderBottom={''}
         fontSize={'1em'} />
         <Section>
           <Solicitacoes>
@@ -146,9 +146,9 @@ class Admin extends Component {
             <Title style={{width:'75%'}}>Novas solicitações:</Title>
               <ContainerSolicitacoesConteudo>
                 <ContainerSolicitacoesItens>
-                  <SelectionOption image="rg.png" link="/Documents" label="Documentos" />
-                  <SelectionOption image="emprego.png" link="/Jobs" label="Emprego" />
-                  <SelectionOption image="negocios.png" link="/Business" label="Negócios" />
+                  <SelectionOption image="rg.png" link="/Documents" label="Documentos" backgroundColor="#3358A4" border="#0C275E"/>
+                  <SelectionOption image="emprego.png" link="/Jobs" label="Emprego" backgroundColor="#83219A" border="#40044E"/>
+                  <SelectionOption image="negocios.png" link="/Business" label="Negócios" backgroundColor="#69B42E" border="#34670C"/>
                 </ContainerSolicitacoesItens>
               </ContainerSolicitacoesConteudo>
             </SolicitacoesContainer>

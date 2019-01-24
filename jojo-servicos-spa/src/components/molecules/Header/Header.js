@@ -17,7 +17,7 @@ class Header extends Component {
 					</div>
 					<div className="container-topo-negocios">
 						<div className="paragrafo-topo-negocios" 
-							style={{color: this.props.color, fontSize: this.props.fontSize}}>
+							style={{color: this.props.color, fontSize: this.props.fontSize , borderBottom:this.props.borderBottom}}>
 							{this.props.title}</div>
 							{
 								this.props.icone && <img className="image-topo-logo-negocios" src={this.props.icone} alt="Logo Negócios" />
