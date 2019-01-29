@@ -110,7 +110,7 @@ const A = styled.a`
 
 const ImagesSolicitacoes = styled.img`
   width: 50%;
-  height: 70%;
+  height: 60%;
 `;
 
 const ButtonDocumentos = styled.button`

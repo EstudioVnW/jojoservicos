@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import './style.css';
+import Backbutton from './Backbutton';
 
 class Header extends Component {
   constructor(props){
-		super(props); 
+		super(props);  
 	}
 	render(){
 		return ( 
@@ -13,6 +14,7 @@ class Header extends Component {
 						<div className="logout-button" onClick={this.props.handlerOnClick}>
 							sair
 						</div>
+						<Backbutton/>
 						<img className="image-topo-logo-jojo" src="./logo-jojo.svg" alt="Logo Jojô" />
 					</div>
 					<div className="container-topo-negocios">

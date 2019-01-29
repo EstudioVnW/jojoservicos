@@ -38,18 +38,20 @@
 	cursor: pointer;
 	font-weight: 600;
 	font-family: Helvetica
-}
+} 
 .container-topo-negocios{
 	width: 100%;
-  max-width: 300px;
+  max-width: 250px;
   height: 100%;
   display: flex;
-  align-items: center;
+	align-items: center;
+	/* justify-content: space-evenly; */
 }
 
 .image-topo-logo-negocios{
-	width: 50px;
-  padding-right: 2%;
+	width: 45px;
+	margin-left: 10%;
+	resize: both;
 } 
 @media (max-width: 640px){
 	.image-topo-logo-negocios{
@@ -74,4 +76,23 @@
 		width: 110px;
 		margin: 0 0 0 5%;
 	}
+}
+/* .caixa_inicial_Box{
+	  height: 70%;
+    background-color: rosybrown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+.box--link{
+	text-decoration: none;
+}
+.caixa_inicial--Voltar{
+	color: rgb(51, 88, 164);
+	height: 60px;
+	line-height: 80px;
+	padding: 0 20px 0 0;
+	cursor: pointer;
+	font-weight: 600;
+	font-family: Helvetica;
 }

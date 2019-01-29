@@ -131,13 +131,13 @@ class Admin extends Component {
       console.log("logout nao deu certo");
     });
   }
-  componentWillMount(){
+  componentWillMount(){ 
     this.checkLogin();
   }
   render(){
     return (
       <Container>
-        <Header title="Central de visualização de pedidos"  handlerOnClick={this.logout}
+        <Header value={this.props.value} title="Central de visualização de pedidos"  handlerOnClick={this.logout}
         color={'rgb(51, 88, 164)'} borderBottom={''}
         fontSize={'1em'} />
         <Section>

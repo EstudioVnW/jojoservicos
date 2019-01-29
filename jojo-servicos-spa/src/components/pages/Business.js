@@ -12,7 +12,7 @@ class Business extends Component {
   render(){
     return (
       <div style={{width: '100%'}}>
-        <Header title="Negócios" color={'rgb(105, 180, 46)'} icone="./negocios.png" handlerOnClick={this.props.handlerOnClick} />
+        <Header title="Negócios" color={'rgb(105, 180, 46)'} icone="./negocios.png" borderBottom={'5px solid #69B42E'} handlerOnClick={this.props.handlerOnClick} />
         <BusinessOrderPanel />
         <Footer />
       </div>

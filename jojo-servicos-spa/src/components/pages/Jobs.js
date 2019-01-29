@@ -9,11 +9,11 @@ class Jobs extends Component {
   render(){
     return (
       <div style={{width: '100%'}}>
-        <Header title="Emprego" color={'rgb(131, 33, 154)'} font-weight={'bold'} borderBottom={'3px solid #69B42E'} handlerOnClick={this.props.handlerOnClick} />
+        <Header title="Emprego" color={'rgb(131, 33, 154)'} font-weight={'bold'} borderBottom={'5px solid #69B42E'} icone="./emprego.png"handlerOnClick={this.props.handlerOnClick} />
         <JobsOrderPanel />
         <Footer />
       </div>
     )
   }}
   
-export default Login(Jobs);
+export default Login(Jobs); 

@@ -26,6 +26,6 @@ const Login = (PageComponent) => class Login extends Component {
     return (
       <PageComponent {...this.props} handlerOnClick={this.logout}/>
     )
-  }}
-  
+  }
+}
 export default Login;

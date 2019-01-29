@@ -23,16 +23,39 @@ class Mensagem extends Component {
             Fique tranquilo,<br /> 
             você encontrou a Jojô
           </h1>
-          <h1 className="caixa_inicial-tituloMobile">
+          {/* <h1 className="caixa_inicial-tituloMobile">
             Fique tranquilo,<br /> 
             você encontrou a Jojô
-          </h1>
-          <p className="caixa_inicial-descrição">
+          </h1> */}
+          <div className="caixa_inicial-documentos">
+            <div className="caixa_inicial-rg">
+              <img className="rg--img" src=" ./rg.png" />
+              <div className="caixa_inicial--docs">
+                <h1 className="doc--title">Agendar documentos</h1>
+                <p className="doc--description">Carteira de Trabalho, Carteira de identidade, Título de eleitor, Boletim de ocorrência e Alistamento militar</p>
+              </div>
+            </div>
+            <div className="caixa_inicial-rg">
+              <img className="icone--img" src=" ./emprego.png" />
+              <div className="caixa_inicial--docs">
+                <h1 className="doc--title">Encontrar um emprego</h1>
+                <p className="doc--description">Currículos, indicações e encaminhamentos jovens aprendizes</p>
+              </div>
+            </div>
+            <div className="caixa_inicial-rg">
+              <img className="icone--img" src=" ./negocios.png" />
+              <div className="caixa_inicial--docs">
+                <h1 className="doc--title">Gerenciar meu negócio</h1>
+                <p className="doc--description">Abertura, encerramento e regularização de MEI</p>
+              </div>
+            </div>
+          </div>
+          {/* <p className="caixa_inicial-descrição">
           Vou ajudar você a superar os seus problemas burocráticos!
           </p>
           <p className="caixa_inicial-descriçãoMobile">
             Vou ajudar você a superar os seus problemas burocráticos!
-          </p>
+          </p> */}
         </div>
       <div className="caixa_inicial-box">	
         <div className="caixa_inicial-indicacao" onClick={this.open} >
