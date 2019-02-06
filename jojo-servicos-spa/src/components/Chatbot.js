@@ -3,7 +3,7 @@ import React from 'react';
 const Chatbot = () =>
   <div className="caixa_inicial-boot">
     <div className="caixa_inicial-perfil">
-      <img className="caixa_inicial-boot--img" src="./perfil.jpg" />
+      {/* <img className="caixa_inicial-boot--img" src="./perfil.jpg" /> */}
       <p className="caixa_inicial-boot--p">
         Fale com a Jojô!
       </p>

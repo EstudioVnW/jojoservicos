@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Switch, Router, Route } from 'react-router-dom';
+import Favicon from 'react-favicon';
 
 import history from '../src/components/pages/history';
 
@@ -24,6 +25,10 @@ const doc = criarDocumento();
 console.log(__SESSION_ID);
 
 ReactDOM.render(
+	// <div>
+    //   <Favicon url="" />
+    //   <h1>Hello, Favicon!</h1>
+    // </div>
 	<Router history={history}>
 			<Switch>
 				<Route exact path="/" render={ (props) => <App {...props} sessionId={__SESSION_ID} doc={doc} /> } />

@@ -19,11 +19,11 @@ class App extends Component {
     this.state = {
       compartilhar:false,
       mensagens: [
-        {
-          emissor: "bot",
-          text: "Estou online",
-          textId: 1
-        }
+        // {
+        //   emissor: "bot",
+        //   text: "Estou online",
+        //   textId: 1
+        // }
       ],
       pedido: { status: "Pendente"},
       cliente: { }
@@ -205,14 +205,26 @@ class App extends Component {
           <div className="caixa_inicial-boasvindas">
             <MensagemBoasVindas />
           </div>
-          <div className="caixa_inicial-boot">
-            <div className="caixa_inicial-perfil">
-              <img className="caixa_inicial-boot--img" src="./JOJO-ilst.png" alt="perfil" />
+          <div className="caixa_inicialBox">
+            <div className="caixa_inicial-editProfile">
+              <div className="caixa_inicial-perfil">
+                <img className="caixa_inicial-boot--img" src="./perfilBot.png" alt="perfil"/>
+              </div>
+              <div className="caixa_inicial--sobre"> 
+                <h1>Jojô Serviços</h1>
+                {/* <img className="imgOnline" src="./online.png"/> */}
+                <div className="Box--Text">
+                  <div className="circle"></div>
+                  <p>Disponível</p>
+                </div>
+              </div>
             </div>
-            <div ref={this.dialogRef} className="caixa_inicial--dialogo">
-              <Conversacao mensagensBot={this.state.mensagens} sendEvent={this.sendEventUsr} />
+            <div className="caixa_inicial-boot">
+              <div ref={this.dialogRef} className="caixa_inicial--dialogo">
+                <Conversacao mensagensBot={this.state.mensagens} sendEvent={this.sendEventUsr} />
+              </div>
+              <SenderBox funcaoEnviar={this.enviarMensagemUsr} />
             </div>
-            <SenderBox funcaoEnviar={this.enviarMensagemUsr} />
           </div>
           <div className="caixa_inicial--mobile">
             <div className="caixa_inicial-indicacao-mobile " onClick={this.open}>
